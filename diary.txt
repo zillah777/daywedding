@@ -1,0 +1,1682 @@
+# PROMPT — WEBSITE INVITACIÓN DE BODA · FRANCO & DAY
+
+Quiero que desarrolles una **website de invitación de boda completamente responsive, moderna, emocional e inmersiva** para una pareja llamada **Franco & Day**.
+
+La web NO debe sentirse como una invitación de boda tradicional.
+
+Debe sentirse como una **Love Story aventurera**, un viaje visual y emocional que cuenta la historia de dos almas libres que aman viajar, descubrir lugares, disfrutar del mar, los atardeceres, la naturaleza, los animales y la vida al aire libre, y que ahora decidieron emprender juntos la aventura más importante: casarse.
+
+---
+
+# 1. INFORMACIÓN DEL EVENTO
+
+Pareja:
+
+**Franco & Day**
+
+Fecha de la boda:
+
+**25 de septiembre de 2026**
+
+Registro Civil:
+
+**25 de septiembre de 2026 · 12:00 hs**
+
+La información de ubicación del Registro Civil y la celebración posterior debe quedar preparada para incorporarse posteriormente si todavía no está disponible.
+
+La fecha debe mostrarse visualmente como:
+
+**25 · 09 · 2026**
+
+y también:
+
+**25 de septiembre de 2026**
+
+---
+
+# 2. CONCEPTO CREATIVO
+
+El concepto central de toda la web debe ser:
+
+## "Dos almas libres. Una misma aventura."
+
+La web debe transmitir:
+
+* Amor
+* Libertad
+* Aventura
+* Viajes
+* Mar
+* Naturaleza
+* Atardeceres
+* Camping
+* Animales
+* Felicidad
+* Complicidad
+* Vida compartida
+* Espíritu hippie chic
+* Estética bohemia contemporánea
+* Modernidad
+* Calidez
+* Espontaneidad
+
+Pensar visualmente en una mezcla entre:
+
+**travel journal + coastal lifestyle + boho chic + editorial photography + modern wedding + road trip + camping + sunset + love story.**
+
+IMPORTANTE:
+
+No caer en una estética hippie antigua o excesivamente rústica.
+
+Debe ser un **hippie chic moderno**, elegante, minimalista y sofisticado.
+
+La estética debe parecer una combinación entre una revista editorial de viajes y una película romántica independiente.
+
+---
+
+# 3. EXPERIENCIA GENERAL
+
+La página debe sentirse como un viaje.
+
+El usuario debe hacer scroll y descubrir progresivamente diferentes capítulos de la historia de Franco & Day.
+
+Cada sección debe sentirse como una escena diferente.
+
+Evitar una estructura convencional de:
+
+"Inicio → Nosotros → Evento → Confirmar asistencia".
+
+En cambio, utilizar una narrativa:
+
+**EL VIAJE → ELLOS → SUS AVENTURAS → EL MAR → SU HISTORIA → LA GRAN AVENTURA → LA BODA**
+
+La navegación debe ser simple y elegante.
+
+Puede existir un pequeño menú flotante, pero debe ser discreto.
+
+---
+
+# 4. HERO / PORTADA
+
+Crear una portada cinematográfica a pantalla completa.
+
+Utilizar una de las fotografías principales de la pareja como imagen protagonista.
+
+La imagen debe ocupar prácticamente toda la pantalla.
+
+Idealmente una fotografía:
+
+* Frente al mar
+* Durante un atardecer
+* Caminando juntos
+* En un paisaje natural
+* O una fotografía espontánea de ambos
+
+Aplicar un tratamiento fotográfico editorial.
+
+Sobre la imagen colocar:
+
+**FRANCO & DAY**
+
+y debajo:
+
+**25 · 09 · 2026**
+
+Luego una pequeña frase:
+
+**"Dos almas libres. Una misma aventura."**
+
+Agregar un indicador sutil:
+
+**SCROLL PARA COMENZAR EL VIAJE ↓**
+
+La portada debe tener una animación de entrada suave.
+
+La imagen puede tener un ligero efecto de movimiento/parallax mientras el usuario hace scroll.
+
+---
+
+# 5. INTRODUCCIÓN — EL COMIENZO DE LA AVENTURA
+
+Después del hero, crear una sección narrativa.
+
+Fondo claro, cálido y minimalista.
+
+Texto:
+
+**"Hay historias que empiezan con un destino.
+Y hay historias que simplemente empiezan..."**
+
+Luego:
+
+**"Dos personas.
+Dos caminos.
+Miles de kilómetros.
+Y una aventura que decidieron vivir juntos."**
+
+La aparición del texto debe ser mediante animaciones suaves al hacer scroll.
+
+No exagerar las animaciones.
+
+---
+
+# 6. CAPÍTULO "ELLOS"
+
+Crear una sección dedicada a Franco & Day.
+
+No utilizar un formato corporativo de "Sobre nosotros".
+
+Debe parecer una página de un diario de viaje.
+
+Título:
+
+**"Franco + Day"**
+
+Subtítulo:
+
+**"Dos almas inquietas que encontraron su lugar en el mismo camino."**
+
+Utilizar varias fotografías de ellos.
+
+Las fotografías pueden aparecer como:
+
+* Polaroids
+* Fotografías editoriales
+* Fotografías ligeramente inclinadas
+* Collage
+* Fotografías superpuestas
+
+Pero hacerlo con mucho criterio.
+
+No convertirlo en un collage caótico.
+
+Debe sentirse artístico y moderno.
+
+---
+
+# 7. CAPÍTULO "DONDE SOMOS FELICES"
+
+Crear una sección dedicada al estilo de vida de la pareja.
+
+Utilizar pequeños elementos visuales relacionados con:
+
+🌊 Mar
+🏕️ Camping
+✈️ Viajes
+🐾 Animales
+🌅 Atardeceres
+🌿 Naturaleza
+🚐 Aventuras
+
+Pero NO utilizar emojis grandes como diseño principal.
+
+Preferir iconografía minimalista o pequeños dibujos lineales.
+
+Crear frases cortas:
+
+**"Perdernos para encontrarnos."**
+
+**"Donde termina el camino, empieza la aventura."**
+
+**"Sal, arena y un poco de locura."**
+
+**"Coleccionamos lugares, momentos y recuerdos."**
+
+**"Nuestro lugar favorito siempre está juntos."**
+
+Las frases pueden aparecer intercaladas entre fotografías.
+
+---
+
+# 8. SECCIÓN MAR
+
+El mar debe tener una presencia importante en el diseño.
+
+Crear una sección visualmente impactante.
+
+Utilizar una fotografía panorámica del mar.
+
+Idealmente durante golden hour / sunset.
+
+Texto:
+
+**"Siempre volvemos al mar."**
+
+Debajo:
+
+**"Porque hay lugares que no solo visitamos.
+Hay lugares que sentimos."**
+
+Agregar pequeños detalles visuales inspirados en el océano:
+
+* líneas orgánicas
+* pequeñas ilustraciones de olas
+* gaviotas
+* textura de arena
+* trazos manuscritos
+* pequeños símbolos náuticos minimalistas
+
+No usar anclas, timones o elementos náuticos clichés en exceso.
+
+---
+
+# 9. GAVIOTAS
+
+Incorporar gaviotas de manera muy sutil.
+
+Podrían aparecer:
+
+* En una animación lenta en el hero
+* Como pequeñas ilustraciones
+* En separadores
+* Sobre fotografías del mar
+
+Las gaviotas deben sentirse naturales, no caricaturescas.
+
+Si se utilizan ilustraciones, deben tener un estilo:
+
+**hand-drawn / editorial / tinta / sketch.**
+
+---
+
+# 10. CAPÍTULO CAMPING
+
+Crear una sección inspirada en sus aventuras al aire libre.
+
+Utilizar fotografías de:
+
+* Carpa
+* Fogata
+* Naturaleza
+* Bosque
+* Playa
+* Mochilas
+* Caminatas
+* Viajes
+* Vehículos
+* Paisajes
+
+El diseño debe transmitir:
+
+**"Nos vamos?"**
+
+y debajo:
+
+**"Sí. Siempre."**
+
+Otra frase:
+
+**"Nuestro plan favorito nunca tuvo demasiados planes."**
+
+Esta sección puede utilizar una composición tipo diario de viaje.
+
+Incorporar pequeños detalles:
+
+* coordenadas ficticias o reales si luego se proporcionan
+* fecha
+* pequeñas notas manuscritas
+* líneas de ruta
+* pequeños sellos de viaje
+* símbolos de brújula muy discretos
+
+---
+
+# 11. LOVE STORY
+
+Esta debe ser una de las secciones principales.
+
+Título:
+
+**"Nuestra Love Story"**
+
+Crear una timeline visual.
+
+NO hacer una timeline corporativa.
+
+Debe parecer un recorrido de viaje.
+
+Ejemplo:
+
+**CAPÍTULO 01**
+Nos encontramos.
+
+↓
+
+**CAPÍTULO 02**
+Empezamos a descubrir el mundo juntos.
+
+↓
+
+**CAPÍTULO 03**
+Llegaron los viajes.
+
+↓
+
+**CAPÍTULO 04**
+Llegaron las aventuras.
+
+↓
+
+**CAPÍTULO 05**
+Llegaron infinitos atardeceres.
+
+↓
+
+**CAPÍTULO 06**
+Y entonces entendimos que no queríamos viajar separados nunca más.
+
+↓
+
+**CAPÍTULO FINAL**
+Nos casamos.
+
+Cada capítulo puede acompañarse con una fotografía.
+
+La timeline debe ser muy visual y emocional.
+
+---
+
+# 12. GALERÍA DE FOTOS
+
+Crear una galería espectacular utilizando las fotografías que proporcionaré.
+
+NO utilizar una cuadrícula tradicional de Instagram.
+
+Crear una composición editorial tipo:
+
+**photo journal / film contact sheet / travel diary.**
+
+Mezclar:
+
+* fotografías verticales
+* horizontales
+* detalles
+* retratos
+* paisajes
+
+Permitir abrir las fotografías en un lightbox elegante.
+
+Agregar transiciones suaves.
+
+Las fotografías son protagonistas.
+
+No cubrirlas con demasiados elementos gráficos.
+
+---
+
+# 13. ATARDECER
+
+Crear una sección especial dedicada a los atardeceres.
+
+Esta sección debe ser emocional y visual.
+
+Utilizar una fotografía de un atardecer.
+
+Texto grande:
+
+**"Y si algún día nos preguntan cuál fue nuestro momento favorito..."**
+
+Después de una pequeña pausa visual:
+
+**"...probablemente digamos: todos aquellos en los que estuvimos juntos."**
+
+Utilizar un efecto de transición inspirado en la luz del atardecer.
+
+---
+
+# 14. LA GRAN AVENTURA
+
+Después de contar la historia, cambiar ligeramente el tono.
+
+Crear una sección que anuncie el gran momento.
+
+Título:
+
+**"Ahora empieza la aventura más grande."**
+
+Texto:
+
+**"Después de tantos caminos recorridos,
+tantos lugares descubiertos,
+tantos atardeceres compartidos...
+
+decidimos elegirnos para siempre."**
+
+Luego mostrar:
+
+# 25 · 09 · 2026
+
+**FRANCO & DAY**
+
+**SE CASAN**
+
+Esta debe ser una de las partes más emotivas de la página.
+
+---
+
+# 15. REGISTRO CIVIL
+
+Crear una sección limpia y elegante:
+
+**REGISTRO CIVIL**
+
+**25 de septiembre de 2026**
+
+**12:00 hs**
+
+Dejar preparada una ubicación para agregar posteriormente:
+
+[UBICACIÓN DEL REGISTRO CIVIL]
+
+Agregar botón:
+
+**CÓMO LLEGAR**
+
+que pueda enlazarse posteriormente con Google Maps.
+
+---
+
+# 16. CUENTA REGRESIVA
+
+Agregar una cuenta regresiva hacia la boda.
+
+Mostrar:
+
+**FALTAN**
+
+**XX DÍAS**
+
+**XX HORAS**
+
+**XX MINUTOS**
+
+**XX SEGUNDOS**
+
+La cuenta regresiva debe calcularse automáticamente a partir de:
+
+25/09/2026
+
+La fecha debe ser configurable fácilmente desde una constante/configuración.
+
+Cuando llegue la fecha, reemplazar la cuenta regresiva por:
+
+**"HOY COMIENZA NUESTRA AVENTURA."**
+
+---
+
+# 17. RSVP
+
+Crear una sección de confirmación de asistencia.
+
+No utilizar el típico formulario aburrido.
+
+Título:
+
+**"¿Nos acompañás en esta aventura?"**
+
+Texto:
+
+**"Hay viajes que se hacen de a dos.
+Y otros que se disfrutan mucho más rodeados de las personas que queremos."**
+
+Botón principal:
+
+**CONFIRMAR ASISTENCIA**
+
+Preparar el componente para conectar posteriormente con:
+
+* WhatsApp
+* Google Forms
+* formulario propio
+* API/backend
+
+Dejar la lógica desacoplada para poder modificar fácilmente el método de confirmación.
+
+---
+
+# 18. DRESS CODE
+
+Crear una sección pequeña y elegante.
+
+Título:
+
+**DRESS CODE**
+
+Texto:
+
+**"Venite cómodo.
+Sentite vos.
+Y preparate para celebrar."**
+
+Si luego se define un dress code concreto, dejarlo preparado para reemplazar este texto.
+
+---
+
+# 19. MÚSICA
+
+La web puede incluir música ambiental opcional.
+
+IMPORTANTE:
+
+Nunca reproducir música automáticamente sin interacción del usuario.
+
+Agregar un pequeño botón flotante:
+
+▶ / ❚❚
+
+para activar/desactivar la música.
+
+El reproductor debe ser extremadamente discreto.
+
+---
+
+# 20. DETALLES VISUALES
+
+Incorporar pequeños elementos gráficos relacionados con la historia:
+
+* Gaviotas
+* Olas
+* Sol
+* Luna
+* Estrellas
+* Montañas
+* Brújula
+* Coordenadas
+* Rutas
+* Huellas
+* Tienda de campaña
+* Fogata
+* Pequeños dibujos de animales
+* Postales
+* Sellos de viaje
+* líneas dibujadas a mano
+
+Pero utilizarlos como **microdetalles**, no como decoración excesiva.
+
+La regla visual debe ser:
+
+**menos elementos, mejor elegidos.**
+
+---
+
+# 21. PALETA DE COLORES
+
+Utilizar una paleta inspirada en:
+
+* Arena
+* Mar
+* Atardecer
+* Tierra
+* Vegetación
+
+Base:
+
+**Off-white / arena:** #F4EFE6
+
+**Crema:** #FAF7F0
+
+**Azul océano desaturado:** #496F78
+
+**Verde salvia:** #89957D
+
+**Terracota:** #C77C61
+
+**Marrón tierra:** #5D5147
+
+**Carbón:** #292724
+
+Evitar colores extremadamente saturados.
+
+Debe sentirse natural, cálido y premium.
+
+---
+
+# 22. TIPOGRAFÍA
+
+Utilizar una combinación de dos tipografías.
+
+Para títulos:
+
+Una serif elegante, romántica y editorial.
+
+Por ejemplo:
+
+**Cormorant Garamond**
+
+o una alternativa similar.
+
+Para textos:
+
+Una sans-serif moderna:
+
+**DM Sans**
+
+o similar.
+
+Para pequeños detalles manuscritos:
+
+utilizar una fuente script muy discreta.
+
+No abusar de tipografías manuscritas.
+
+---
+
+# 23. ESTILO FOTOGRÁFICO
+
+Las fotografías deben tener estética:
+
+**cinematic / analog / film photography / editorial travel photography.**
+
+Preferir:
+
+* luz natural
+* grano fotográfico sutil
+* tonos cálidos
+* negros suaves
+* colores ligeramente desaturados
+* contraste moderado
+* golden hour
+* sensación de película
+
+Evitar filtros Instagram excesivos.
+
+---
+
+# 24. ANIMACIONES
+
+Las animaciones deben ser elegantes.
+
+Utilizar:
+
+* fade-in
+* parallax
+* reveal on scroll
+* desplazamientos horizontales muy suaves
+* textos que aparecen progresivamente
+* fotografías que se revelan
+* pequeños movimientos orgánicos
+
+Evitar:
+
+* rebotes
+* animaciones rápidas
+* efectos 3D exagerados
+* demasiados elementos flotando
+* transiciones llamativas que distraigan
+
+La web debe sentirse cinematográfica.
+
+---
+
+# 25. MOBILE FIRST
+
+La mayoría de las personas probablemente abrirán la invitación desde WhatsApp en un teléfono.
+
+Por eso:
+
+**MOBILE FIRST ES PRIORIDAD ABSOLUTA.**
+
+En móvil:
+
+* fotografías grandes
+* textos perfectamente legibles
+* botones grandes
+* navegación simple
+* carga rápida
+* animaciones optimizadas
+* no depender de hover
+* evitar elementos que ocupen demasiado espacio
+
+La experiencia móvil debe ser excelente.
+
+---
+
+# 26. DESKTOP
+
+En desktop aprovechar el ancho de pantalla para crear:
+
+* fotografías panorámicas
+* composiciones editoriales
+* fotografías flotantes
+* espacios negativos
+* grandes títulos
+* secciones inmersivas
+
+Pero nunca sacrificar la legibilidad.
+
+---
+
+# 27. TECNOLOGÍA
+
+Construir utilizando:
+
+**Next.js + React + TypeScript**
+
+Utilizar:
+
+**Tailwind CSS**
+
+Para animaciones:
+
+**Framer Motion**
+
+Para iconos:
+
+**Lucide React**
+
+La arquitectura debe ser limpia y mantenible.
+
+Crear componentes reutilizables:
+
+* Hero
+* StorySection
+* PhotoGallery
+* Timeline
+* Countdown
+* EventDetails
+* RSVP
+* MusicPlayer
+* Footer
+* FloatingNavigation
+
+---
+
+# 28. CONFIGURACIÓN CENTRALIZADA
+
+Crear un archivo de configuración para que todos los datos importantes puedan modificarse fácilmente.
+
+Ejemplo conceptual:
+
+weddingConfig:
+
+couple:
+
+* groom: Franco
+* bride: Day
+
+wedding:
+
+* date: 2026-09-25
+* civilRegistryDate: 2026-09-25
+* civilRegistryTime: 12:00
+
+event:
+
+* location
+* address
+* mapsUrl
+
+social:
+
+* whatsapp
+* instagram
+
+gallery:
+
+* images
+
+music:
+
+* enabled
+* url
+
+Esto permitirá cambiar información sin modificar los componentes.
+
+---
+
+# 29. SEO Y SOCIAL SHARING
+
+Configurar correctamente:
+
+* title
+* description
+* Open Graph
+* Twitter/X cards
+* favicon
+* imagen de preview
+
+Título:
+
+**Franco & Day · 25.09.2026**
+
+Descripción:
+
+**Dos almas libres. Una misma aventura.**
+
+La imagen Open Graph debe ser una fotografía romántica de la pareja.
+
+---
+
+# 30. DETALLES UX
+
+Agregar un pequeño botón flotante:
+
+**↑**
+
+para volver arriba.
+
+Agregar navegación discreta:
+
+**HISTORIA · FOTOS · BODA · RSVP**
+
+La navegación debe aparecer/desaparecer de manera elegante.
+
+El usuario nunca debe sentirse perdido.
+
+---
+
+# 31. FOOTER
+
+Cerrar la historia con una fotografía hermosa de la pareja.
+
+Texto:
+
+**"Y esto recién comienza..."**
+
+Luego:
+
+**FRANCO & DAY**
+
+**25 · 09 · 2026**
+
+Y una frase final:
+
+**"Gracias por ser parte de nuestra aventura."**
+
+Debajo, un pequeño detalle gráfico de una ruta que continúa fuera de la pantalla.
+
+---
+
+# 32. SENSACIÓN FINAL
+
+La persona que visite esta web debe sentir que:
+
+"Estoy viendo la historia de dos personas reales."
+
+No debe parecer una plantilla de bodas.
+
+No debe parecer una página comercial.
+
+No debe parecer una landing page genérica.
+
+Debe sentirse:
+
+**íntima + aventurera + romántica + libre + moderna + cinematográfica.**
+
+La experiencia debe tener una narrativa clara:
+
+**MAR → VIAJES → NATURALEZA → AVENTURA → AMOR → HISTORIA → BODA**
+
+El concepto creativo final es:
+
+# "Dos almas libres. Una misma aventura."
+
+Y la boda debe sentirse como:
+
+# "La aventura más linda de nuestras vidas."
+
+- Ritmo visual, casi como un videoclip:
+
+Foto → texto → paisaje → foto → historia → mar → foto → camping → timeline → atardecer → anuncio de boda → cuenta regresiva → RSVP.
+
+Eso puede quedar muchísimo más premium.
+
+Ubicacion: colocar una imagen de un mapa y al dar click redirigir a este lugar:
+https://www.google.com/maps/place/43%C2%B022'54.5%22S+65%C2%B002'39.7%22W/@-43.3818016,-65.0469246,17z/data=!3m1!4b1!4m4!3m3!8m2!3d-43.3818016!4d-65.0443497?hl=en&entry=ttu&g_ep=EgoyMDI2MDIwNC4wIKXMDSoASAFQAw%3D%3D
+
+La invitacion deberia tener un mini reproductor que se reproduzca la cancion:
+C:\xampp\htdocs\BodaDay\music que esta aca C:\xampp\htdocs\BodaDay\music\weeding song.mp3
+
+-pero permitir pausarla.
+
+PRINCIPIO FUNDAMENTAL
+
+No diseñes una "invitación de boda".
+
+Diseñá:
+
+UNA HISTORIA DE AMOR QUE EL USUARIO PUEDA RECORRER.
+
+La persona debe entrar pensando:
+
+“Qué linda invitación.”
+
+Y terminar pensando:
+
+“Wow… quiero estar ahí.”
+
+La web tiene que hacer sentir que Franco y Day no están invitando simplemente a una boda.
+
+Están invitando a sus personas favoritas a ser parte del próximo capítulo de su aventura.
+
+CONCEPTO FINAL:
+FRANCO & DAY
+TWO FREE SOULS.
+ONE ENDLESS ADVENTURE.
+
+25 · 09 · 2026
+
+🌊 Concepto visual: “THE ADVENTURE OF US”
+
+Imaginate que al entrar no parece que abriste una invitación.
+
+Parece que abriste un recuerdo.
+
+Pantalla negra → aparece lentamente una textura de película → se escucha suavemente el mar → aparece una fotografía de ellos → una pequeña línea dibujada comienza a recorrer la pantalla como si fuera una ruta sobre un mapa.
+
+Y aparece:
+
+FRANCO & DAY
+
+Two free souls, one endless adventure.
+
+Luego:
+
+25 · 09 · 2026
+
+Y recién ahí empieza el viaje.
+
+1. HERO CINEMATOGRÁFICO
+
+No haría simplemente una foto con texto encima.
+
+Haría una escena completa.
+
+Visual
+
+Fotografía fullscreen de Franco y Day.
+
+Sobre ella:
+
+grano de película muy sutil
+pequeñas partículas de polvo
+textura de película analógica
+degradado oscuro muy suave
+luz cálida
+pequeñas gaviotas lejanas
+movimiento parallax
+una línea blanca dibujada a mano que entra desde un borde
+
+La línea puede convertirse en una especie de ruta de viaje.
+
+Y el texto aparece lentamente.
+
+FRANCO & DAY
+
+debajo:
+
+A love story written in miles, sunsets & adventures.
+
+Y abajo:
+
+25 · 09 · 2026
+
+En la parte inferior:
+
+SCROLL TO BEGIN THE ADVENTURE ↓
+
+2. EL DETALLE QUE HARÍA TODA LA DIFERENCIA: LA RUTA
+
+Este sería uno de los elementos gráficos principales de toda la web.
+
+Una línea dibujada a mano que atraviesa la página.
+
+No tiene que ser perfectamente recta.
+
+Puede parecer trazada con lápiz.
+
+Por momentos:
+
+~ ~ ~ ~ ~
+
+como una ruta.
+
+En determinados puntos aparecen pequeñas ilustraciones:
+
+🌊 ola
+🏕️ carpa
+🐾 huella
+✈️ avión
+🌅 sol
+🐚 concha
+🧭 brújula
+
+Pero dibujadas, no emojis.
+
+La línea va conectando las diferentes partes de la historia.
+
+Esto hace que toda la web tenga una identidad visual coherente.
+
+3. EFECTO “DIARIO DE VIAJE”
+
+Acá podemos hacer algo realmente lindo.
+
+En algunas secciones, las fotografías no aparecen como cards.
+
+Aparecen como páginas de un cuaderno de viaje.
+
+Por ejemplo:
+
+┌──────────────────────────────┐
+│                              │
+│        FOTO DE ELLOS         │
+│                              │
+│                              │
+│  Puerto Madryn               │
+│  42°46' S · 65°02' W        │
+│                              │
+│  somewhere we felt alive.   │
+└──────────────────────────────┘
+
+Pero mucho más elegante.
+
+Pequeños textos manuscritos.
+
+Fechas.
+
+Coordenadas.
+
+Pequeños sellos.
+
+Garabatos.
+
+Incluso pequeñas anotaciones como:
+
+“Nos quedamos hasta que cayó el sol.”
+
+Eso hace que la invitación parezca su propio diario personal.
+
+4. FOTOGRAFÍAS FLOTANTES
+
+En lugar de una galería rígida:
+
+Fotografías que parecen estar flotando.
+
+Una fotografía vertical.
+
+Otra ligeramente inclinada.
+
+Otra parcialmente superpuesta.
+
+Otra ocupando todo el ancho.
+
+Mientras haces scroll, las fotos se desplazan a diferentes velocidades.
+
+Algo así:
+
+                ┌─────────────┐
+                │             │
+                │   FOTO      │
+                │             │
+                └─────────────┘
+
+       ┌──────────────────────┐
+       │                      │
+       │       FOTO           │
+       │                      │
+       └──────────────────────┘
+
+                    ┌─────────┐
+                    │  FOTO   │
+                    └─────────┘
+
+Pero con una composición editorial muy cuidada.
+
+5. UNA FOTO QUE ROMPE LA PÁGINA
+
+Cada tanto debería haber una fotografía que ocupe 100% del viewport.
+
+Por ejemplo:
+
+🌅 un atardecer.
+
+La página se detiene.
+
+La imagen llena toda la pantalla.
+
+El movimiento del scroll hace un pequeño zoom.
+
+Y aparece lentamente:
+
+“Hay atardeceres que uno recuerda para siempre.”
+
+Pausa.
+
+“Y personas con las que uno quiere verlos todos.”
+
+Esto puede quedar tremendo.
+
+6. EL MAR COMO ELEMENTO INTERACTIVO
+
+Acá podemos ponernos creativos.
+
+Una sección con fondo azul profundo.
+
+La textura de una fotografía del océano.
+
+Cuando el usuario hace scroll:
+
+la superficie del agua se mueve lentamente.
+
+Aparece una pequeña ilustración de una gaviota.
+
+Y el texto:
+
+ALWAYS
+RETURN
+TO THE SEA
+
+Después:
+
+“Siempre volvemos al mar.”
+
+La tipografía puede pasar de serif a manuscrita.
+
+7. GAVIOTAS ANIMADAS
+
+No pondría una gaviota gigante.
+
+Sería kitsch.
+
+Haría algo mucho más sutil.
+
+Tres o cuatro pequeñas siluetas:
+
+𓅿 𓅿
+
+que aparecen muy lejos en el horizonte.
+
+Se desplazan lentamente.
+
+Incluso pueden desaparecer detrás de una fotografía.
+
+Muy cinematográfico.
+
+8. CAMPING: UNA SECCIÓN DIFERENTE
+
+Acá cambiaría completamente la estética.
+
+Fondo:
+
+verde oscuro / bosque nocturno.
+
+Una fotografía de una carpa iluminada.
+
+Pequeñas estrellas.
+
+Una luna.
+
+Animación de partículas.
+
+Y una pequeña fogata animada.
+
+Texto:
+
+“¿NOS VAMOS?”
+
+debajo:
+
+“Siempre.”
+
+Después:
+
+“Porque nuestro lugar favorito nunca fue un lugar.”
+
+Pausa.
+
+“Fue estar juntos.”
+
+🔥
+
+Esto puede ser uno de los momentos emocionales fuertes.
+
+9. CONSTELACIONES
+
+Después de la sección de camping:
+
+pantalla oscura.
+
+Pequeñas estrellas aparecen.
+
+Algunas se conectan mediante líneas.
+
+Y forman una constelación.
+
+Podría formar discretamente:
+
+F + D
+
+o incluso un símbolo creado específicamente para ellos.
+
+No tiene que ser una constelación real.
+
+Podría ser “La constelación de Franco & Day”.
+
+Texto:
+
+“De todos los lugares del mundo, terminamos encontrándonos.”
+
+10. LOVE STORY COMO MAPA
+
+En lugar de una timeline convencional:
+
+crear un mapa ilustrado.
+
+Una ruta recorre diferentes lugares.
+
+En cada parada:
+
+01
+
+Nos encontramos
+
+02
+
+Nos elegimos
+
+03
+
+Nos fuimos de aventura
+
+04
+
+Nos perdimos
+
+05
+
+Nos volvimos a encontrar
+
+06
+
+Y decidimos hacerlo para siempre
+
+La ruta termina en:
+
+25 · 09 · 2026
+11. “POLAROID WALL”
+
+Podemos tener una sección donde varias fotos aparezcan como fotografías instantáneas.
+
+Pero cada una tiene una pequeña frase escrita abajo.
+
+Ejemplo:
+
+“Ese día.”
+
+“Nuestro lugar.”
+
+“Sin planes.”
+
+“Otro atardecer.”
+
+“Nosotros.”
+
+Al hacer scroll, las fotografías pueden ir apareciendo como si alguien estuviera armando un mural.
+
+12. MICRODETALLES QUE HARÁN QUE PAREZCA PREMIUM
+
+Estos son importantísimos.
+
+Textura de papel
+
+En algunas secciones:
+
+papel reciclado / papel de diario / papel fotográfico.
+
+Muy sutil.
+
+Film grain
+
+Toda la página puede tener una textura cinematográfica casi imperceptible.
+
+No exagerar.
+
+Imperfecciones
+
+Pequeñas líneas dibujadas a mano.
+
+Subrayados.
+
+Círculos.
+
+Flechas.
+
+Pequeños garabatos.
+
+Eso rompe la perfección digital.
+
+Sellos
+
+Pequeños sellos tipo pasaporte:
+
+ADVENTURE
+
+LOVE
+
+SEA
+
+25.09.26
+
+Pero minimalistas.
+
+13. UNA BRÚJULA INTERACTIVA
+
+Un pequeño elemento puede acompañar la navegación.
+
+Una brújula minimalista en una esquina.
+
+A medida que el usuario navega, la aguja gira lentamente.
+
+No tiene que ser obvio.
+
+Es un easter egg visual.
+
+14. COORDENADAS
+
+En distintas fotografías podemos mostrar pequeñas coordenadas.
+
+Por ejemplo:
+
+41° 08' S
+71° 18' W
+
+o las coordenadas reales de lugares importantes de su historia si después me las pasás.
+
+Debajo:
+
+“Somewhere we found each other.”
+
+Esto le da muchísimo carácter.
+
+15. EL MOMENTO “WOW”
+
+Antes del anuncio de la boda haría una transición especial.
+
+La pantalla queda casi completamente blanca.
+
+Solo aparece:
+
+THE NEXT ADVENTURE
+
+La línea de ruta empieza a moverse.
+
+Cruza toda la pantalla.
+
+El usuario hace scroll.
+
+La línea llega a una pequeña estrella.
+
+La estrella explota suavemente en luz.
+
+Y aparece una fotografía de ellos.
+
+WE'RE GETTING MARRIED
+
+Después:
+
+FRANCO & DAY
+
+25 · 09 · 2026
+
+Este debería ser el gran momento de la experiencia.
+
+16. EL 25 DE SEPTIEMBRE COMO “DESTINO”
+
+Visualmente, la boda debería presentarse como si fuera el próximo destino de un viaje.
+
+Por ejemplo:
+
+NEXT DESTINATION
+
+25.09.26
+
+FRANCO + DAY
+
+BUENOS AIRES
+12:00
+
+Incluso podemos poner:
+
+DESTINATION: FOREVER
+
+❤️
+
+17. CUENTA REGRESIVA MÁS LINDA
+
+En vez de:
+
+123 días 05 horas...
+
+haría algo editorial:
+
+FALTAN
+21
+
+DÍAS
+
+08
+
+HORAS
+
+32
+
+MINUTOS
+
+14
+
+SEGUNDOS
+
+Los números enormes, serif.
+
+Mucho espacio negativo.
+
+Y debajo:
+
+“Until the next adventure.”
+
+18. RSVP COMO POSTAL
+
+En lugar de un formulario típico:
+
+hacer que parezca una postal enviada desde su próximo destino.
+
+Título:
+
+POSTCARD FROM US
+
+“Nos encantaría que seas parte de este capítulo.”
+
+Botón:
+
+✈ CONFIRMAR ASISTENCIA
+
+Al hacer click:
+
+la postal se abre como una carta.
+
+Y aparece el formulario.
+
+Es un detalle pequeño, pero memorable.
+
+19. CURSOR PERSONALIZADO
+
+En desktop se puede hacer algo muy sutil.
+
+El cursor puede dejar una pequeña línea o punto que desaparece lentamente.
+
+Sobre fotografías puede transformarse en:
+
+VIEW
+
+Sobre botones:
+
+OPEN
+
+Sobre la galería:
+
+EXPLORE
+
+En móvil obviamente se desactiva.
+
+20. TRANSICIONES ENTRE SECCIONES
+
+No quiero que sean simples cortes.
+
+Cada sección debería transformarse en la siguiente.
+
+Ejemplo:
+
+Arena → fotografía → mar → fotografía → noche → estrellas → boda.
+
+Incluso podemos usar colores para contar la historia:
+
+crema → azul → verde → terracota → azul noche → negro → blanco.
+
+Es casi una película.
+
+21. EL FINAL
+
+Después del RSVP:
+
+una fotografía enorme de ellos.
+
+Quizás caminando de espaldas hacia el mar.
+
+La imagen lentamente se oscurece.
+
+Aparece:
+
+“Y esto recién comienza…”
+
+Después:
+
+FRANCO & DAY
+
+25 · 09 · 2026
+
+Y debajo:
+
+“Gracias por acompañarnos en esta aventura.”
+
+La línea de ruta vuelve a aparecer.
+
+Continúa hacia la derecha.
+
+Y desaparece.
+
+Como si la historia siguiera.
+
+🎨 DIRECCIÓN ARTÍSTICA
+
+La regla general sería:
+
+60% fotografía
+20% tipografía
+10% ilustración
+10% interacción
+
+No quiero una web llena de elementos.
+
+Quiero aire.
+
+Mucho espacio negativo.
+
+Fotografías enormes.
+
+Tipografía elegante.
+
+Texturas sutiles.
+
+Pequeñas imperfecciones.
+
+Animaciones lentas.
+
+🖋️ ESTILO TIPOGRÁFICO
+
+Combinar:
+
+Serif editorial
+
+Para:
+
+FRANCO & DAY
+
+25 · 09 · 2026
+
+Frases emocionales.
+
+Sans moderna
+
+Para información.
+
+Handwritten
+
+Solo para pequeñas anotaciones.
+
+Por ejemplo:
+
+“remember this day”
+
+o
+
+“another adventure”
+
+🌅 PALETA
+
+No limitaría todo a colores de boda.
+
+Usaría una paleta que vaya cambiando durante la historia:
+
+Arena
+#EFE5D5
+
+Marfil
+#FAF8F2
+
+Azul océano
+#527783
+
+Verde salvia
+#89947C
+
+Terracota
+#C98267
+
+Tierra
+#655548
+
+Azul noche
+#172D34
+
+Negro carbón
+#202321
+
+🚀 TECNOLOGÍA / ANIMACIÓN
+
+Para conseguir esta experiencia:
+
+Next.js + TypeScript
+
+Tailwind CSS
+
+Framer Motion
+
+y, si hace falta para efectos específicos:
+
+GSAP + ScrollTrigger
+
+La página debe mantener excelente performance.
+
+Especialmente en móvil.
+
+Las fotografías deben utilizar:
+
+WebP/AVIF
+lazy loading
+responsive images
+tamaños optimizados
+preload únicamente de las imágenes críticas
+
+Las animaciones deben respetar:
+
+prefers-reduced-motion.

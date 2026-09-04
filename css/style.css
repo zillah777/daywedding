@@ -1,0 +1,3281 @@
+/* ================================================================
+   FRANCO & DAY — Wedding Love Story
+   "Dos almas libres. Una misma aventura."
+   
+   Design System & Cinematic Styles
+   ================================================================ */
+
+/* ─── 1. Custom Properties ─── */
+:root {
+  /* Color Palette — Coastal Bohemian */
+  --arena: #EFE5D5;
+  --marfil: #FAF8F2;
+  --ocean: #527783;
+  --ocean-deep: #3a5a64;
+  --salvia: #89947C;
+  --terracota: #C98267;
+  --terracota-glow: rgba(201, 130, 103, 0.35);
+  --tierra: #655548;
+  --noche: #172D34;
+  --carbon: #202321;
+  --cream: #FDFBF7;
+  --gold: #D4AF37;
+  --gold-soft: rgba(212, 175, 55, 0.15);
+  --white-soft: rgba(255, 255, 255, 0.92);
+  --black-soft: rgba(0, 0, 0, 0.7);
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+  --font-sans: 'DM Sans', 'Segoe UI', system-ui, sans-serif;
+  --font-hand: 'Caveat', cursive;
+
+  /* Spacing — 8pt Grid */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+  --sp-10: 128px;
+
+  /* Easing */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Transitions */
+  --t-fast: 0.2s var(--ease-out);
+  --t-normal: 0.4s var(--ease-out);
+  --t-slow: 0.8s var(--ease-out);
+  --t-dramatic: 1.2s var(--ease-out);
+
+  /* Layout */
+  --max-width: 1280px;
+  --max-text: 720px;
+
+  /* Z-index layers */
+  --z-grain: 9999;
+  --z-cursor: 9998;
+  --z-lightbox: 9000;
+  --z-nav: 8000;
+  --z-music: 7500;
+  --z-compass: 7000;
+  --z-scroll-top: 6500;
+  --z-loading: 10000;
+}
+
+/* ─── 2. Reset & Base ─── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--tierra);
+  background-color: var(--carbon);
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: default;
+}
+
+body.loading {
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+::selection {
+  background-color: var(--terracota);
+  color: var(--cream);
+}
+
+/* ─── 3. Typography System ─── */
+.font-serif { font-family: var(--font-serif); }
+.font-sans { font-family: var(--font-sans); }
+.font-hand { font-family: var(--font-hand); }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.display-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6vw + 1rem, 5.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw + 0.5rem, 3.5rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+}
+
+.section-subtitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 2vw + 0.3rem, 1.5rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.4;
+  opacity: 0.85;
+}
+
+.body-text {
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1.2vw, 1.125rem);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.handwritten {
+  font-family: var(--font-hand);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  line-height: 1.3;
+}
+
+.label-text {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.big-number {
+  font-family: var(--font-serif);
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+/* ─── 4. Film Grain Overlay ─── */
+#film-grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: var(--z-grain);
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+}
+
+#film-grain::after {
+  content: '';
+  position: absolute;
+  inset: -200%;
+  width: 400%;
+  height: 400%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+  animation: grain 0.8s steps(1) infinite;
+}
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  20% { transform: translate(-15%, 5%); }
+  30% { transform: translate(7%, -25%); }
+  40% { transform: translate(-5%, 25%); }
+  50% { transform: translate(-15%, 10%); }
+  60% { transform: translate(15%, 0%); }
+  70% { transform: translate(0%, 15%); }
+  80% { transform: translate(3%, 35%); }
+  90% { transform: translate(-10%, 10%); }
+}
+
+/* ─── 5. Loading Screen ─── */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--carbon);
+  z-index: var(--z-loading);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1.2s var(--ease-out), visibility 1.2s;
+}
+
+.loading-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loading-screen__text {
+  color: var(--cream);
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: loadFadeIn 1.5s var(--ease-out) 0.3s forwards;
+}
+
+.loading-screen__line {
+  width: 60px;
+  height: 1px;
+  background: var(--terracota);
+  margin-top: var(--sp-5);
+  transform: scaleX(0);
+  animation: loadLine 2s var(--ease-out) 0.8s forwards;
+}
+
+@keyframes loadFadeIn {
+  to { opacity: 0.7; }
+}
+
+@keyframes loadLine {
+  to { transform: scaleX(1); }
+}
+
+/* ─── 6. Floating Navigation ─── */
+.floating-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-nav);
+  padding: var(--sp-4) var(--sp-5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--sp-6);
+  transform: translateY(-100%);
+  transition: transform 0.5s var(--ease-out), background 0.5s;
+  background: rgba(32, 35, 33, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.floating-nav.visible {
+  transform: translateY(0);
+}
+
+.floating-nav__link {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  padding: var(--sp-2) var(--sp-3);
+  transition: color var(--t-fast);
+  position: relative;
+  font-weight: 400;
+}
+
+.floating-nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: var(--terracota);
+  transition: width 0.3s var(--ease-out), left 0.3s var(--ease-out);
+}
+
+.floating-nav__link:hover,
+.floating-nav__link.active {
+  color: var(--cream);
+}
+
+.floating-nav__link:hover::after,
+.floating-nav__link.active::after {
+  width: 100%;
+  left: 0;
+}
+
+/* ─── 7. Music Player ─── */
+.music-player {
+  position: fixed;
+  bottom: var(--sp-5);
+  right: var(--sp-5);
+  z-index: var(--z-music);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(32, 35, 33, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cream);
+  cursor: pointer;
+  transition: all var(--t-normal);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+.music-player:hover {
+  transform: scale(1.1);
+  background: rgba(32, 35, 33, 0.9);
+  border-color: var(--terracota);
+}
+
+.music-player.playing .music-player__icon--play { display: none; }
+.music-player.playing .music-player__icon--pause { display: block; }
+.music-player:not(.playing) .music-player__icon--play { display: block; }
+.music-player:not(.playing) .music-player__icon--pause { display: none; }
+
+.music-player__bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 16px;
+}
+
+.music-player__bar {
+  width: 3px;
+  background: var(--terracota);
+  border-radius: 1px;
+  transition: height 0.2s;
+}
+
+.music-player.playing .music-player__bar {
+  animation: musicBar 0.8s ease-in-out infinite alternate;
+}
+
+.music-player.playing .music-player__bar:nth-child(1) { animation-delay: 0s; }
+.music-player.playing .music-player__bar:nth-child(2) { animation-delay: 0.2s; }
+.music-player.playing .music-player__bar:nth-child(3) { animation-delay: 0.4s; }
+.music-player.playing .music-player__bar:nth-child(4) { animation-delay: 0.1s; }
+
+@keyframes musicBar {
+  0% { height: 4px; }
+  100% { height: 16px; }
+}
+
+.music-player:not(.playing) .music-player__bar {
+  height: 4px !important;
+}
+
+/* ─── 8. Compass Easter Egg ─── */
+.compass {
+  position: fixed;
+  bottom: var(--sp-5);
+  left: var(--sp-5);
+  z-index: var(--z-compass);
+  width: 40px;
+  height: 40px;
+  opacity: 0.25;
+  transition: opacity var(--t-normal);
+}
+
+.compass:hover {
+  opacity: 0.6;
+}
+
+.compass__needle {
+  transform-origin: center;
+  transition: transform 0.6s var(--ease-out);
+}
+
+/* ─── 9. Scroll To Top ─── */
+.scroll-top {
+  position: fixed;
+  bottom: 80px;
+  right: var(--sp-5);
+  z-index: var(--z-scroll-top);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(32, 35, 33, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all var(--t-normal);
+  font-size: 1rem;
+}
+
+.scroll-top.visible {
+  opacity: 0.6;
+  transform: translateY(0);
+}
+
+.scroll-top:hover {
+  opacity: 1;
+  background: rgba(32, 35, 33, 0.8);
+  border-color: var(--terracota);
+}
+
+/* ─── 10. Custom Cursor (Desktop Only) ─── */
+.custom-cursor {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: var(--terracota);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  mix-blend-mode: difference;
+  transition: width 0.3s var(--ease-spring), 
+              height 0.3s var(--ease-spring),
+              background 0.3s;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.custom-cursor.active {
+  width: 40px;
+  height: 40px;
+  background: rgba(201, 130, 103, 0.3);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .custom-cursor { display: block; }
+  body { cursor: none; }
+  a, button, .gallery__item { cursor: none; }
+}
+
+/* ─── 11. Scroll Reveal Animations ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-6 { transition-delay: 0.6s; }
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+}
+
+.reveal-left.visible,
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 1s var(--ease-out), transform 1s var(--ease-out);
+}
+
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ─── 12. Section Base ─── */
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+.section--cream {
+  background-color: var(--marfil);
+  color: var(--tierra);
+}
+
+.section--arena {
+  background-color: var(--arena);
+  color: var(--tierra);
+}
+
+.section--dark {
+  background-color: var(--carbon);
+  color: var(--cream);
+}
+
+.section--noche {
+  background-color: var(--noche);
+  color: var(--cream);
+}
+
+.section--ocean {
+  background-color: var(--ocean);
+  color: var(--cream);
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--sp-9) var(--sp-5);
+}
+
+.section__text-container {
+  max-width: var(--max-text);
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ─── Section Dividers — Route Line ─── */
+.route-divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--sp-7) 0;
+  position: relative;
+}
+
+.route-divider__line {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, var(--terracota), transparent);
+  opacity: 0.4;
+}
+
+.route-divider__icon {
+  margin: var(--sp-3) 0;
+  opacity: 0.3;
+  font-size: 1rem;
+}
+
+.route-divider--light .route-divider__line {
+  background: linear-gradient(to bottom, transparent, var(--tierra), transparent);
+}
+
+/* ─── 13. HERO Section ─── */
+.hero {
+  position: relative;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--carbon);
+}
+
+.hero__image-wrapper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  transform: scale(1.1);
+  transition: transform 0.1s linear;
+  filter: contrast(1.05) saturate(0.9);
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(32, 35, 33, 0.3) 0%,
+    rgba(32, 35, 33, 0.1) 40%,
+    rgba(32, 35, 33, 0.15) 60%,
+    rgba(32, 35, 33, 0.6) 100%
+  );
+  z-index: 2;
+}
+
+.hero__vignette {
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: var(--cream);
+  padding: var(--sp-5);
+}
+
+.hero__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 8vw, 6rem);
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: var(--sp-4);
+  text-shadow: 0 2px 40px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  animation: heroFadeIn 1.5s var(--ease-out) 0.5s forwards;
+}
+
+.hero__title span {
+  font-family: var(--font-hand);
+  font-size: 0.6em;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+  vertical-align: middle;
+  color: var(--terracota);
+  display: inline-block;
+  margin: 0 0.1em;
+}
+
+.hero__tagline {
+  font-family: var(--font-serif);
+  font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--sp-5);
+  opacity: 0;
+  animation: heroFadeIn 1.5s var(--ease-out) 1s forwards;
+  color: rgba(253, 251, 247, 0.8);
+}
+
+.hero__date {
+  font-family: var(--font-sans);
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+  letter-spacing: 0.35em;
+  font-weight: 300;
+  opacity: 0;
+  animation: heroFadeIn 1.5s var(--ease-out) 1.4s forwards;
+  color: rgba(253, 251, 247, 0.7);
+}
+
+.hero__scroll {
+  position: absolute;
+  bottom: var(--sp-7);
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  opacity: 0;
+  animation: heroFadeIn 1.5s var(--ease-out) 2s forwards;
+}
+
+.hero__scroll-text {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(253, 251, 247, 0.5);
+  margin-bottom: var(--sp-3);
+  display: block;
+}
+
+.hero__scroll-arrow {
+  font-size: 1.2rem;
+  color: rgba(253, 251, 247, 0.4);
+  animation: scrollBounce 2s var(--ease-out) infinite;
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(8px); opacity: 0.8; }
+}
+
+/* ─── Seagulls (Hero Section) ─── */
+.seagulls {
+  position: absolute;
+  top: 8%;
+  left: 0;
+  width: 100%;
+  height: 35%;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.seagull {
+  position: absolute;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
+  will-change: transform;
+}
+
+.seagull--1 {
+  top: 14%;
+  width: 38px;
+  height: 19px;
+  opacity: 0.85;
+  animation: seagullFlight1 26s linear infinite;
+}
+
+.seagull--2 {
+  top: 24%;
+  width: 28px;
+  height: 14px;
+  opacity: 0.7;
+  animation: seagullFlight2 34s linear infinite 5s;
+}
+
+.seagull--3 {
+  top: 7%;
+  width: 22px;
+  height: 11px;
+  opacity: 0.55;
+  animation: seagullFlight3 30s linear infinite 14s;
+}
+
+@keyframes seagullFlight1 {
+  0% {
+    transform: translate3d(-60px, 0, 0) rotate(1deg);
+  }
+  25% {
+    transform: translate3d(28vw, -14px, 0) rotate(-2deg);
+  }
+  50% {
+    transform: translate3d(56vw, 8px, 0) rotate(2deg);
+  }
+  75% {
+    transform: translate3d(82vw, -8px, 0) rotate(-1deg);
+  }
+  100% {
+    transform: translate3d(calc(100vw + 60px), 2px, 0) rotate(1deg);
+  }
+}
+
+@keyframes seagullFlight2 {
+  0% {
+    transform: translate3d(-50px, 4px, 0) rotate(-1deg);
+  }
+  30% {
+    transform: translate3d(32vw, -10px, 0) rotate(2deg);
+  }
+  65% {
+    transform: translate3d(68vw, 6px, 0) rotate(-2deg);
+  }
+  100% {
+    transform: translate3d(calc(100vw + 50px), -4px, 0) rotate(1deg);
+  }
+}
+
+@keyframes seagullFlight3 {
+  0% {
+    transform: translate3d(-40px, -4px, 0) rotate(2deg);
+  }
+  35% {
+    transform: translate3d(36vw, 8px, 0) rotate(-1deg);
+  }
+  70% {
+    transform: translate3d(74vw, -12px, 0) rotate(2deg);
+  }
+  100% {
+    transform: translate3d(calc(100vw + 40px), 0, 0) rotate(0deg);
+  }
+}
+
+/* ─── 14. Introduction Section ─── */
+.intro {
+  padding: var(--sp-9) var(--sp-5) var(--sp-8);
+  background: var(--marfil);
+  text-align: center;
+}
+
+.intro__quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--tierra);
+  max-width: 600px;
+  margin: 0 auto var(--sp-7);
+  opacity: 0.9;
+}
+
+.intro__text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--tierra);
+  max-width: 500px;
+  margin: 0 auto;
+  opacity: 0.75;
+}
+
+.intro__line {
+  width: 1px;
+  height: 50px;
+  background: var(--terracota);
+  margin: var(--sp-7) auto;
+  opacity: 0.4;
+}
+
+/* ─── 15. "Ellos" Chapter ─── */
+.ellos {
+  background: var(--arena);
+  padding: var(--sp-8) var(--sp-5);
+}
+
+.ellos__header {
+  text-align: center;
+  margin-bottom: var(--sp-8);
+}
+
+.ellos__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  color: var(--tierra);
+  margin-bottom: var(--sp-4);
+}
+
+.ellos__title span {
+  font-family: var(--font-hand);
+  color: var(--terracota);
+  font-size: 0.8em;
+}
+
+.ellos__subtitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--tierra);
+  opacity: 0.7;
+}
+
+/* Diary page style photo layout */
+.ellos__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-6);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.diary-page {
+  background: var(--marfil);
+  border-radius: 4px;
+  padding: var(--sp-5);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06),
+              0 1px 3px rgba(0, 0, 0, 0.04);
+  position: relative;
+  transform: rotate(var(--rotate, 0deg));
+}
+
+.diary-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid rgba(101, 85, 72, 0.08);
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.diary-page__image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 2px;
+  filter: contrast(1.02) saturate(0.95);
+}
+
+.diary-page__coords {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--ocean);
+  margin-top: var(--sp-3);
+  opacity: 0.6;
+}
+
+.diary-page__note {
+  font-family: var(--font-hand);
+  font-size: 1.1rem;
+  color: var(--tierra);
+  margin-top: var(--sp-2);
+  opacity: 0.7;
+}
+
+.diary-page__stamp {
+  position: absolute;
+  top: var(--sp-4);
+  right: var(--sp-4);
+  width: 55px;
+  height: 55px;
+  border: 2px solid var(--terracota);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--terracota);
+  opacity: 0.35;
+  transform: rotate(-15deg);
+  z-index: 2;
+}
+
+/* ─── 16. "Donde Somos Felices" ─── */
+.felices {
+  background: var(--marfil);
+  padding: var(--sp-8) var(--sp-5);
+}
+
+.felices__icons {
+  display: flex;
+  justify-content: center;
+  gap: var(--sp-6);
+  flex-wrap: wrap;
+  margin-bottom: var(--sp-7);
+}
+
+.felices__icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  opacity: 0.5;
+  transition: opacity var(--t-normal);
+}
+
+.felices__icon:hover {
+  opacity: 0.8;
+}
+
+.felices__icon svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--ocean);
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.felices__icon span {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--tierra);
+}
+
+.felices__quotes {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.felices__quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--tierra);
+  margin-bottom: var(--sp-6);
+  opacity: 0.8;
+  padding: var(--sp-4) 0;
+  border-bottom: 1px solid rgba(101, 85, 72, 0.08);
+}
+
+.felices__quote:last-child {
+  border-bottom: none;
+}
+
+/* ─── 17. Sea Section — Fullscreen ─── */
+.sea {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.sea__image-wrapper {
+  position: absolute;
+  inset: 0;
+}
+
+.sea__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.05) saturate(0.85);
+  transform: scale(1.05);
+}
+
+.sea__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(23, 45, 52, 0.2),
+    rgba(23, 45, 52, 0.5) 60%,
+    rgba(23, 45, 52, 0.7)
+  );
+  z-index: 2;
+}
+
+.sea__content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: var(--cream);
+  padding: var(--sp-5);
+  max-width: 600px;
+}
+
+.sea__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: var(--sp-5);
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.3);
+}
+
+.sea__text {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-weight: 300;
+  line-height: 1.8;
+  opacity: 0.85;
+  text-shadow: 0 1px 15px rgba(0, 0, 0, 0.3);
+}
+
+.sea__handwritten {
+  font-family: var(--font-hand);
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  color: var(--terracota);
+  margin-top: var(--sp-5);
+  opacity: 0.8;
+}
+
+/* Small wave SVG separator */
+.wave-separator {
+  width: 120px;
+  height: 20px;
+  margin: var(--sp-5) auto;
+  opacity: 0.3;
+}
+
+/* ─── 18. Camping Section — Dark Theme ─── */
+.camping {
+  background: var(--noche);
+  color: var(--cream);
+  padding: var(--sp-9) var(--sp-5);
+  position: relative;
+  overflow: hidden;
+}
+
+.camping__stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.camping__star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: var(--cream);
+  border-radius: 50%;
+  animation: twinkle 3s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.8; }
+}
+
+.camping__content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.camping__photos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-5);
+  margin: var(--sp-7) 0;
+}
+
+.camping__photo {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  border-radius: 4px;
+  filter: contrast(1.05) saturate(0.85) brightness(0.95);
+}
+
+.camping__question {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  margin-bottom: var(--sp-3);
+}
+
+.camping__answer {
+  font-family: var(--font-hand);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--terracota);
+  margin-bottom: var(--sp-7);
+}
+
+.camping__quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  font-weight: 300;
+  font-style: italic;
+  opacity: 0.7;
+  line-height: 1.7;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Animated campfire */
+.campfire {
+  width: 40px;
+  height: 40px;
+  margin: var(--sp-6) auto;
+  position: relative;
+}
+
+.campfire__flame {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 12px;
+  height: 18px;
+  background: var(--terracota);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  transform: translateX(-50%);
+  animation: flicker 0.5s ease-in-out infinite alternate;
+  filter: blur(1px);
+  opacity: 0.8;
+}
+
+.campfire__flame::before {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  width: 8px;
+  height: 14px;
+  background: var(--gold);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  transform: translateX(-50%);
+  animation: flicker 0.3s ease-in-out infinite alternate-reverse;
+}
+
+.campfire__glow {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 20px;
+  background: radial-gradient(ellipse, rgba(201, 130, 103, 0.3), transparent);
+  border-radius: 50%;
+}
+
+@keyframes flicker {
+  0% { transform: translateX(-50%) scaleY(1) scaleX(1); }
+  50% { transform: translateX(-50%) scaleY(1.1) scaleX(0.9); }
+  100% { transform: translateX(-50%) scaleY(0.95) scaleX(1.05); }
+}
+
+/* ─── 19. Constellations Section ─── */
+.constellations {
+  background: #0a0f12;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.constellations__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.constellations__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--cream);
+  padding: var(--sp-5);
+}
+
+.constellations__text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 300;
+  font-style: italic;
+  opacity: 0.7;
+  max-width: 500px;
+  margin: var(--sp-5) auto 0;
+}
+
+.constellations__initials {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  color: var(--terracota);
+  opacity: 0.5;
+  margin-bottom: var(--sp-4);
+}
+
+/* ─── 20. Love Story Timeline ─── */
+.lovestory {
+  background: var(--marfil);
+  padding: var(--sp-9) var(--sp-5);
+}
+
+.lovestory__header {
+  text-align: center;
+  margin-bottom: var(--sp-8);
+}
+
+.lovestory__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  color: var(--tierra);
+  margin-bottom: var(--sp-3);
+}
+
+.lovestory__handwritten {
+  font-family: var(--font-hand);
+  font-size: 1.2rem;
+  color: var(--terracota);
+  opacity: 0.6;
+}
+
+/* ─── Story Letter (Nuestra Historia por Dayana) ─── */
+/* ─── Story Letter (Nuestra Historia por Dayana) ─── */
+.story-letter {
+  max-width: 780px;
+  margin: 0 auto;
+  border-radius: 6px;
+  padding: clamp(2.5rem, 5vw, 4.5rem) clamp(2rem, 5vw, 4.2rem);
+  box-shadow: 0 15px 45px rgba(50, 40, 30, 0.08), 0 2px 10px rgba(201, 130, 103, 0.06);
+  position: relative;
+  text-align: center;
+}
+
+/* ─── Hoja de Libreta Arrancada (Notebook Paper) ─── */
+.notebook-paper {
+  background-color: #FAF8F4 !important;
+  /* Lined notebook paper texture: subtle blue-grey lines */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 32px,
+    rgba(165, 185, 205, 0.38) 32px,
+    rgba(165, 185, 205, 0.38) 33px
+  ) !important;
+  background-position: 0 45px !important;
+  border: 1px solid rgba(215, 205, 190, 0.75) !important;
+  border-left: 3px solid rgba(195, 180, 160, 0.8) !important;
+}
+
+/* Washi tape holding the notebook sheet */
+.notebook-paper__tape {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-0.8deg);
+  width: 130px;
+  height: 28px;
+  background: rgba(226, 218, 202, 0.8);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+  clip-path: polygon(2% 0%, 98% 0%, 100% 100%, 0% 100%);
+  pointer-events: none;
+}
+
+/* Spiral binder holes on left margin */
+.notebook-paper__holes {
+  position: absolute;
+  left: 12px;
+  top: 40px;
+  bottom: 40px;
+  width: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.notebook-paper__hole {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #E8E2D7;
+  box-shadow: inset 0 2px 4px rgba(60, 50, 40, 0.4), 0 1px 1px rgba(255, 255, 255, 0.85);
+}
+
+/* Red vertical margin guide line */
+.notebook-paper::after {
+  content: '';
+  position: absolute;
+  left: 42px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(235, 115, 115, 0.35);
+  pointer-events: none;
+}
+
+.story-letter__ornament {
+  color: var(--terracota);
+  opacity: 0.65;
+  max-width: 170px;
+  margin: 0 auto var(--sp-6) auto;
+}
+
+.story-letter__block {
+  margin-bottom: var(--sp-6);
+  position: relative;
+}
+
+.story-letter__chapter {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--terracota);
+  background: rgba(201, 130, 103, 0.09);
+  padding: 5px 16px;
+  border-radius: 20px;
+  margin-bottom: var(--sp-3);
+  border: 1px solid rgba(201, 130, 103, 0.15);
+}
+
+.story-letter__paragraph {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 2.2vw, 1.38rem);
+  font-weight: 400;
+  line-height: 1.85;
+  color: var(--tierra);
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+.story-letter__paragraph--lead {
+  font-size: clamp(1.22rem, 2.4vw, 1.45rem);
+  color: #1F2220;
+}
+
+.story-letter__highlight {
+  margin: var(--sp-7) auto;
+  padding: var(--sp-4) var(--sp-3);
+  position: relative;
+}
+
+.story-letter__quote-mark {
+  font-family: var(--font-serif);
+  font-size: 3.2rem;
+  line-height: 0.8;
+  color: var(--terracota);
+  opacity: 0.25;
+  margin-bottom: var(--sp-2);
+}
+
+.story-letter__highlight-text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.8vw, 1.85rem);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--terracota);
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  margin-bottom: var(--sp-4);
+}
+
+.story-letter__divider-line {
+  width: 70px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--terracota), transparent);
+  margin: 0 auto;
+  opacity: 0.6;
+}
+
+.story-letter__paragraph--climax {
+  font-size: clamp(1.18rem, 2.3vw, 1.42rem);
+  font-weight: 500;
+  color: var(--tierra);
+  line-height: 1.8;
+}
+
+.story-letter__signature {
+  margin-top: var(--sp-7);
+  padding-top: var(--sp-6);
+  border-top: 1px dashed rgba(201, 130, 103, 0.28);
+}
+
+.story-letter__names {
+  font-family: var(--font-serif);
+  font-size: clamp(1.85rem, 3.5vw, 2.4rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--tierra);
+  margin-bottom: var(--sp-2);
+}
+
+.story-letter__motto {
+  font-family: var(--font-hand);
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  color: var(--terracota);
+  opacity: 0.9;
+  letter-spacing: 0.03em;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-left: var(--sp-7);
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 12px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--terracota) 10%, var(--terracota) 90%, transparent);
+  opacity: 0.3;
+}
+
+.timeline__item {
+  position: relative;
+  padding-bottom: var(--sp-7);
+}
+
+.timeline__dot {
+  position: absolute;
+  left: calc(-1 * var(--sp-7) + 8px);
+  top: 4px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--terracota);
+  opacity: 0.6;
+  box-shadow: 0 0 0 4px var(--marfil), 0 0 0 5px rgba(201, 130, 103, 0.2);
+}
+
+.timeline__chapter {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ocean);
+  margin-bottom: var(--sp-2);
+  font-weight: 500;
+}
+
+.timeline__text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 400;
+  color: var(--tierra);
+  line-height: 1.5;
+}
+
+.timeline__item--final .timeline__dot {
+  width: 13px;
+  height: 13px;
+  left: calc(-1 * var(--sp-7) + 6px);
+  background: var(--terracota);
+  opacity: 1;
+  box-shadow: 0 0 0 4px var(--marfil), 0 0 0 5px var(--terracota), 0 0 15px rgba(201, 130, 103, 0.3);
+}
+
+.timeline__item--final .timeline__text {
+  font-weight: 600;
+  color: var(--terracota);
+}
+
+.timeline__date {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--ocean);
+  margin-top: var(--sp-2);
+  opacity: 0.5;
+}
+
+/* ─── 21. Gallery / Polaroid Wall ─── */
+.gallery {
+  background: var(--arena);
+  padding: var(--sp-8) var(--sp-5);
+}
+
+.gallery__header {
+  text-align: center;
+  margin-bottom: var(--sp-7);
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-5);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.gallery__item {
+  cursor: pointer;
+  transition: transform var(--t-normal);
+}
+
+.gallery__item:hover {
+  transform: translateY(-4px);
+}
+
+.polaroid {
+  background: var(--cream);
+  padding: var(--sp-3) var(--sp-3) var(--sp-6);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08),
+              0 1px 4px rgba(0, 0, 0, 0.04);
+  transform: rotate(var(--rotate, 0deg));
+  transition: transform 0.5s var(--ease-spring), box-shadow var(--t-normal);
+}
+
+.polaroid:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12),
+              0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.polaroid__image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  filter: contrast(1.02) saturate(0.9);
+}
+
+.polaroid__caption {
+  font-family: var(--font-hand);
+  font-size: 1rem;
+  color: var(--tierra);
+  text-align: center;
+  margin-top: var(--sp-3);
+  opacity: 0.65;
+}
+
+/* Wide gallery item */
+.gallery__item--wide {
+  grid-column: 1 / -1;
+}
+
+.gallery__item--wide .polaroid {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.gallery__item--wide .polaroid__image {
+  aspect-ratio: 4/3;
+}
+
+/* ─── 22. Sunset / Atardecer Section ─── */
+.atardecer {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--carbon);
+  padding-bottom: clamp(3rem, 7vw, 6rem);
+}
+
+.atardecer__image-wrapper {
+  position: absolute;
+  inset: 0;
+}
+
+.atardecer__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 12%;
+  filter: saturate(1.08) contrast(1.04) brightness(0.92);
+  transform: none;
+}
+
+@media (min-width: 768px) {
+  .atardecer {
+    min-height: 92vh;
+  }
+  .atardecer__image {
+    object-position: center 10%;
+  }
+}
+
+.atardecer__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(32, 35, 33, 0.3),
+    rgba(32, 35, 33, 0.2) 30%,
+    rgba(201, 130, 103, 0.15) 60%,
+    rgba(32, 35, 33, 0.6)
+  );
+  z-index: 2;
+}
+
+.atardecer__content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: var(--cream);
+  padding: var(--sp-5);
+  max-width: 650px;
+}
+
+.atardecer__text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.6;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.atardecer__text--second {
+  margin-top: var(--sp-6);
+  opacity: 0.85;
+}
+
+/* ─── 23. Next Adventure / WOW Moment ─── */
+.wow {
+  background: var(--cream);
+  padding: var(--sp-9) var(--sp-5);
+  text-align: center;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wow__pretitle {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ocean);
+  margin-bottom: var(--sp-6);
+  opacity: 0.6;
+}
+
+.wow__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 300;
+  color: var(--tierra);
+  margin-bottom: var(--sp-7);
+  line-height: 1.3;
+}
+
+.wow__poem {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--tierra);
+  line-height: 2;
+  opacity: 0.75;
+  max-width: 450px;
+  margin: 0 auto var(--sp-8);
+}
+
+.wow__announcement {
+  margin-top: var(--sp-6);
+}
+
+.wow__date {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  color: var(--terracota);
+  letter-spacing: 0.1em;
+  margin-bottom: var(--sp-4);
+}
+
+.wow__names {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--tierra);
+  margin-bottom: var(--sp-3);
+}
+
+.wow__married {
+  font-family: var(--font-hand);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  color: var(--terracota);
+  opacity: 0.7;
+}
+
+/* Star burst animation */
+.wow__star {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto var(--sp-6);
+  position: relative;
+}
+
+.wow__star::before,
+.wow__star::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  height: 30px;
+  background: var(--terracota);
+  opacity: 0.3;
+}
+
+.wow__star::before { transform: translate(-50%, -50%) rotate(0deg); }
+.wow__star::after { transform: translate(-50%, -50%) rotate(90deg); }
+
+/* ─── 24. Wedding / Registro Civil ─── */
+/* ─── 24. Wedding / Registro Civil & Salón ─── */
+.boda {
+  background: var(--arena);
+  padding: var(--sp-8) var(--sp-5);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.boda__header {
+  text-align: center;
+  margin-bottom: var(--sp-7);
+  position: relative;
+  z-index: 2;
+}
+
+.boda__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-6);
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .boda__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
+  }
+}
+
+.boda__card {
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+  background: var(--cream);
+  border-radius: 12px;
+  padding: var(--sp-7) var(--sp-6);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(101, 85, 72, 0.08);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform var(--t-normal), box-shadow var(--t-normal);
+}
+
+.boda__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.09), 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.boda__destination {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ocean);
+  margin-bottom: var(--sp-5);
+  opacity: 0.6;
+}
+
+.boda__icon {
+  width: 38px;
+  height: 38px;
+  margin: 0 auto var(--sp-4);
+  opacity: 0.7;
+}
+
+.boda__event {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 500;
+  color: var(--tierra);
+  margin-bottom: var(--sp-3);
+}
+
+.boda__date-full {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--tierra);
+  margin-bottom: var(--sp-2);
+  font-weight: 400;
+}
+
+.boda__time {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--terracota);
+  font-weight: 500;
+  margin-bottom: var(--sp-4);
+}
+
+.boda__location {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--tierra);
+  opacity: 0.8;
+  margin-bottom: var(--sp-6);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.boda__location span {
+  display: block;
+}
+
+.boda__map-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: var(--ocean);
+  padding: var(--sp-3) var(--sp-6);
+  border-radius: 100px;
+  transition: all var(--t-normal);
+  font-weight: 500;
+  text-decoration: none;
+  width: 100%;
+  max-width: 280px;
+}
+
+.boda__map-link:hover {
+  background: var(--ocean-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(82, 119, 131, 0.3);
+}
+
+.boda__map-link--celebration {
+  background: var(--terracota);
+}
+
+.boda__map-link--celebration:hover {
+  background: #b56e54;
+  box-shadow: 0 4px 16px rgba(201, 130, 103, 0.35);
+}
+
+.boda__map-link svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+/* ─── 25. Countdown ─── */
+.countdown-section {
+  background: var(--marfil);
+  padding: var(--sp-9) var(--sp-5);
+  text-align: center;
+}
+
+.countdown__label {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ocean);
+  margin-bottom: var(--sp-7);
+  opacity: 0.5;
+}
+
+.countdown__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+  max-width: 600px;
+  margin: 0 auto var(--sp-7);
+}
+
+.countdown__item {
+  text-align: center;
+}
+
+.countdown__number {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 300;
+  color: var(--tierra);
+  line-height: 1;
+  margin-bottom: var(--sp-2);
+}
+
+.countdown__unit {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--tierra);
+  opacity: 0.4;
+}
+
+.countdown__subtitle {
+  font-family: var(--font-serif);
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--ocean);
+  opacity: 0.5;
+}
+
+.countdown__finished {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 300;
+  color: var(--terracota);
+  display: none;
+}
+
+.countdown-section.finished .countdown__grid,
+.countdown-section.finished .countdown__label {
+  display: none;
+}
+
+.countdown-section.finished .countdown__finished {
+  display: block;
+}
+
+/* ─── 26. RSVP — Postcard Style ─── */
+.rsvp {
+  background: var(--arena);
+  padding: var(--sp-9) var(--sp-5);
+  text-align: center;
+}
+
+.rsvp__postcard {
+  max-width: 520px;
+  margin: 0 auto;
+  background: var(--cream);
+  border-radius: 8px;
+  padding: var(--sp-7) var(--sp-6);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(101, 85, 72, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.rsvp__postcard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  border-bottom-left-radius: 100%;
+  background: linear-gradient(135deg, transparent 40%, rgba(201, 130, 103, 0.06));
+}
+
+.rsvp__stamp {
+  position: absolute;
+  top: var(--sp-4);
+  right: var(--sp-4);
+  width: 50px;
+  height: 50px;
+  border: 2px dashed var(--terracota);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.2;
+}
+
+.rsvp__stamp svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--terracota);
+}
+
+.rsvp__pretitle {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ocean);
+  margin-bottom: var(--sp-5);
+  opacity: 0.5;
+}
+
+.rsvp__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 300;
+  color: var(--tierra);
+  margin-bottom: var(--sp-4);
+}
+
+.rsvp__text {
+  font-family: var(--font-serif);
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--tierra);
+  line-height: 1.7;
+  opacity: 0.7;
+  margin-bottom: var(--sp-6);
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rsvp__button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: var(--terracota);
+  padding: var(--sp-4) var(--sp-6);
+  border-radius: 100px;
+  transition: all var(--t-normal);
+  font-weight: 500;
+  box-shadow: 0 4px 16px var(--terracota-glow);
+  cursor: pointer;
+}
+
+.rsvp__button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(201, 130, 103, 0.4);
+  background: #b5704f;
+}
+
+.rsvp__button:active {
+  transform: translateY(0);
+}
+
+.rsvp__button svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* RSVP confirmation toast */
+.rsvp__toast {
+  position: fixed;
+  bottom: var(--sp-7);
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--noche);
+  color: var(--cream);
+  padding: var(--sp-4) var(--sp-6);
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  z-index: var(--z-nav);
+  transition: transform 0.5s var(--ease-spring);
+  white-space: nowrap;
+}
+
+.rsvp__toast.show {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ─── 27. Dress Code ─── */
+.dresscode {
+  background: var(--marfil);
+  padding: var(--sp-7) var(--sp-5);
+  text-align: center;
+}
+
+.dresscode__title {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ocean);
+  margin-bottom: var(--sp-5);
+  opacity: 0.5;
+}
+
+.dresscode__text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--tierra);
+  line-height: 1.8;
+  max-width: 400px;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+
+/* ─── 28. Footer ─── */
+.footer {
+  position: relative;
+  background: var(--carbon);
+  color: var(--cream);
+  overflow: hidden;
+}
+
+.footer__image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.footer__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.8) contrast(1.05);
+}
+
+.footer__image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 30%,
+    rgba(32, 35, 33, 0.6) 60%,
+    var(--carbon) 100%
+  );
+}
+
+.footer__content {
+  position: relative;
+  text-align: center;
+  padding: var(--sp-7) var(--sp-5) var(--sp-8);
+  margin-top: -80px;
+  z-index: 2;
+}
+
+.footer__beginning {
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 300;
+  font-style: italic;
+  opacity: 0.8;
+  margin-bottom: var(--sp-6);
+}
+
+.footer__names {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: var(--sp-3);
+}
+
+.footer__date {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  opacity: 0.5;
+  margin-bottom: var(--sp-6);
+}
+
+.footer__thanks {
+  font-family: var(--font-hand);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: var(--terracota);
+  opacity: 0.6;
+  margin-bottom: var(--sp-7);
+}
+
+/* Route line continuing out */
+.footer__route {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--sp-6);
+}
+
+.footer__route-line {
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--terracota) 30%, var(--terracota) 70%, transparent);
+  opacity: 0.3;
+  position: relative;
+}
+
+.footer__route-line::after {
+  content: '';
+  position: absolute;
+  right: -4px;
+  top: -3px;
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid var(--terracota);
+  border-right: 1px solid var(--terracota);
+  transform: rotate(45deg);
+  opacity: 0.5;
+}
+
+.footer__credit {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  opacity: 0.2;
+  margin-top: var(--sp-6);
+}
+
+/* ─── 29. Lightbox ─── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.95);
+  z-index: var(--z-lightbox);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s var(--ease-out), visibility 0.4s;
+  padding: var(--sp-5);
+}
+
+.lightbox.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox__image {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 4px;
+  transform: scale(0.9);
+  transition: transform 0.5s var(--ease-spring);
+}
+
+.lightbox.open .lightbox__image {
+  transform: scale(1);
+}
+
+.lightbox__close {
+  position: absolute;
+  top: var(--sp-5);
+  right: var(--sp-5);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cream);
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity var(--t-fast);
+  background: none;
+  border: none;
+}
+
+.lightbox__close:hover {
+  opacity: 1;
+}
+
+/* ─── 30. Responsive Design ─── */
+
+/* Tablet */
+@media (min-width: 768px) {
+  .ellos__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-7);
+  }
+
+  .diary-page:nth-child(1) { --rotate: -1.5deg; }
+  .diary-page:nth-child(2) { --rotate: 1deg; }
+
+  .camping__photos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .section__container {
+    padding: var(--sp-10) var(--sp-7);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .gallery__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-6);
+  }
+
+  .gallery__item:nth-child(1) .polaroid { --rotate: -2deg; }
+  .gallery__item:nth-child(2) .polaroid { --rotate: 1.5deg; }
+  .gallery__item:nth-child(3) .polaroid { --rotate: -1deg; }
+  .gallery__item:nth-child(4) .polaroid { --rotate: 2deg; }
+  .gallery__item:nth-child(5) .polaroid { --rotate: -0.5deg; }
+
+  .camping__photos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .floating-nav {
+    gap: var(--sp-7);
+  }
+
+  .floating-nav__link {
+    font-size: 0.72rem;
+    padding: var(--sp-2) var(--sp-4);
+  }
+
+  .hero__image {
+    object-position: center 25%;
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1440px) {
+  .section__container {
+    padding: var(--sp-10) var(--sp-8);
+  }
+
+  .countdown__grid {
+    max-width: 700px;
+  }
+}
+
+/* ─── 29. Wedding Invitation Ornaments & Embellishments ─── */
+
+/* Gilded Double-Line Frame */
+.invitation-frame {
+  position: relative;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  padding: var(--sp-8) var(--sp-6);
+  border-radius: 8px;
+  max-width: 680px;
+  margin: 0 auto;
+  background: rgba(253, 251, 247, 0.85);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+}
+
+.invitation-frame::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed rgba(212, 175, 55, 0.25);
+  pointer-events: none;
+  border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+  .invitation-frame {
+    padding: var(--sp-6) var(--sp-3);
+    margin: 0 var(--sp-2);
+  }
+  .ornament-corner {
+    width: 22px;
+    height: 22px;
+  }
+  .ornament-corner--tl { top: 8px; left: 8px; }
+  .ornament-corner--tr { top: 8px; right: 8px; }
+  .ornament-corner--bl { bottom: 8px; left: 8px; }
+  .ornament-corner--br { bottom: 8px; right: 8px; }
+}
+
+/* Corner Flourishes (Esquinas Ornamentales) */
+.ornament-corner {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  color: var(--gold);
+  opacity: 0.6;
+}
+
+.ornament-corner--tl { top: 12px; left: 12px; }
+.ornament-corner--tr { top: 12px; right: 12px; transform: scaleX(-1); }
+.ornament-corner--bl { bottom: 12px; left: 12px; transform: scaleY(-1); }
+.ornament-corner--br { bottom: 12px; right: 12px; transform: scale(-1); }
+
+/* Watercolor Art Cards (Camper Van, Dogs, Camping) */
+.felices__art-duo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--sp-6);
+  max-width: 820px;
+  margin: var(--sp-8) auto 0;
+}
+
+.art-card {
+  position: relative;
+  background: var(--cream);
+  padding: var(--sp-4) var(--sp-4) var(--sp-5);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+  transform: rotate(var(--rotate, 0deg));
+  transition: transform 0.4s var(--ease-spring), box-shadow 0.3s ease;
+}
+
+.art-card:hover {
+  transform: scale(1.03) rotate(0deg);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.12);
+}
+
+.art-card__image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 4px;
+  filter: contrast(1.02);
+}
+
+.art-card__caption {
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  color: var(--tierra);
+  text-align: center;
+  margin-top: var(--sp-3);
+  opacity: 0.85;
+}
+
+/* Celestial Union Medallion (Sun, Moon & Sea) */
+.celestial-medallion {
+  max-width: 220px;
+  margin: var(--sp-6) auto 0;
+  border-radius: 50%;
+  padding: 4px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.35), transparent 70%);
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.35));
+  transition: transform 0.4s var(--ease-spring);
+}
+
+.celestial-medallion:hover {
+  transform: scale(1.06) rotate(3deg);
+}
+
+.celestial-medallion img {
+  width: 100%;
+  border-radius: 50%;
+  display: block;
+}
+
+/* Storybook Camping Vignette */
+.camping-art-vignette {
+  max-width: 320px;
+  margin: var(--sp-6) auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.4s var(--ease-spring);
+}
+
+.camping-art-vignette:hover {
+  transform: scale(1.04);
+}
+
+.camping-art-vignette img {
+  width: 100%;
+  display: block;
+}
+
+/* Realistic 3D Wax Seal (Sello de Lacre Franco & Day) */
+.wax-seal {
+  position: relative;
+  width: 76px;
+  height: 76px;
+  margin: var(--sp-5) auto;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #d9534f, #a92a27 60%, #6d1514 100%);
+  box-shadow: 
+    0 4px 15px rgba(109, 21, 20, 0.4),
+    0 1px 3px rgba(0, 0, 0, 0.25),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transform: rotate(-4deg);
+  transition: transform 0.3s var(--ease-spring), box-shadow 0.3s ease;
+  user-select: none;
+  border: 2px solid rgba(138, 28, 26, 0.8);
+}
+
+.wax-seal:hover {
+  transform: rotate(0deg) scale(1.08);
+  box-shadow: 
+    0 8px 25px rgba(109, 21, 20, 0.5),
+    0 2px 6px rgba(0, 0, 0, 0.3),
+    inset 0 2px 6px rgba(255, 255, 255, 0.4);
+}
+
+.wax-seal:active {
+  transform: scale(0.95);
+}
+
+.wax-seal__rim {
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.wax-seal__monogram {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffd8d6;
+  text-shadow: 
+    0 -1px 1px rgba(0, 0, 0, 0.6),
+    0 1px 1px rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.05em;
+  z-index: 2;
+}
+
+/* Botanical Laurel Wreath (Guirnalda Botánica) */
+.botanical-wreath {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-4);
+  margin: var(--sp-4) auto;
+  max-width: 320px;
+}
+
+.botanical-branch {
+  width: 70px;
+  height: 24px;
+  color: var(--salvia);
+  opacity: 0.7;
+}
+
+.botanical-branch--right {
+  transform: scaleX(-1);
+}
+
+/* Washi Tape on Polaroids */
+.washi-tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1deg);
+  width: 90px;
+  height: 24px;
+  background: rgba(239, 229, 213, 0.75);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  border-left: 2px dashed rgba(101, 85, 72, 0.2);
+  border-right: 2px dashed rgba(101, 85, 72, 0.2);
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Entwined Wedding Rings SVG */
+.wedding-rings {
+  width: 48px;
+  height: 32px;
+  margin: var(--sp-3) auto;
+  color: var(--gold);
+  filter: drop-shadow(0 2px 6px rgba(212, 175, 55, 0.35));
+}
+
+.wedding-rings circle {
+  transition: stroke-dashoffset 0.8s ease;
+}
+
+/* ─── 30. Living Animations & Motion Graphics ─── */
+
+/* Hero Dust / Sun Motes Canvas */
+.hero__dust {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Animated Seagull Wings */
+.seagull__wing {
+  transform-box: view-box;
+  transform-origin: 20px 12px;
+}
+
+.seagull__wing--left {
+  transform-box: view-box;
+  transform-origin: 20px 12px;
+  animation: seagullFlapLeft 1.4s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate;
+}
+
+.seagull__wing--right {
+  transform-box: view-box;
+  transform-origin: 20px 12px;
+  animation: seagullFlapRight 1.4s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate;
+}
+
+@keyframes seagullFlapLeft {
+  0% { transform: rotate(-16deg); }
+  35% { transform: rotate(-10deg); }
+  100% { transform: rotate(18deg); }
+}
+
+@keyframes seagullFlapRight {
+  0% { transform: rotate(16deg); }
+  35% { transform: rotate(10deg); }
+  100% { transform: rotate(-18deg); }
+}
+
+/* Multi-Layer Moving Ocean Waves */
+.sea__waves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 110px;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sea__wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  transform: translate3d(0, 0, 0);
+}
+
+.sea__wave--back {
+  fill: rgba(239, 229, 213, 0.45);
+  animation: waveRollBack 14s linear infinite alternate;
+}
+
+.sea__wave--mid {
+  fill: rgba(239, 229, 213, 0.75);
+  animation: waveRollMid 9s linear infinite alternate-reverse;
+}
+
+.sea__wave--front {
+  fill: var(--noche);
+  animation: waveRollFront 6.5s ease-in-out infinite alternate;
+}
+
+@keyframes waveRollBack {
+  0% { transform: translateX(0) scaleY(1); }
+  100% { transform: translateX(-25%) scaleY(1.18); }
+}
+
+@keyframes waveRollMid {
+  0% { transform: translateX(-20%) scaleY(0.92); }
+  100% { transform: translateX(0) scaleY(1.22); }
+}
+
+@keyframes waveRollFront {
+  0% { transform: translateX(0) scaleY(1); }
+  100% { transform: translateX(-15%) scaleY(1.1); }
+}
+
+/* Gliding Seagulls in Sea Section */
+.sea__seagulls {
+  position: absolute;
+  top: 12%;
+  left: 0;
+  width: 100%;
+  height: 35%;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.sea__seagull {
+  position: absolute;
+  width: 36px;
+  height: 18px;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.35));
+  pointer-events: none;
+  will-change: transform;
+}
+
+.sea__seagull--1 {
+  left: 16%;
+  top: 22%;
+  animation: seagullGlide1 15s ease-in-out infinite;
+}
+
+.sea__seagull--2 {
+  right: 20%;
+  top: 38%;
+  width: 26px;
+  height: 13px;
+  opacity: 0.65;
+  animation: seagullGlide2 19s ease-in-out infinite 2.5s;
+}
+
+@keyframes seagullGlide1 {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-2deg); }
+  50% { transform: translate3d(42px, -18px, 0) rotate(4deg); }
+}
+
+@keyframes seagullGlide2 {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(3deg); }
+  50% { transform: translate3d(-46px, -16px, 0) rotate(-3deg); }
+}
+
+/* Campfire Embers Canvas & Living Fire */
+.camping__embers-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.campfire {
+  width: 60px;
+  height: 60px;
+  margin: var(--sp-6) auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.campfire__logs {
+  position: absolute;
+  bottom: 2px;
+  width: 48px;
+  height: 14px;
+}
+
+.campfire__log {
+  position: absolute;
+  height: 8px;
+  background: #463428;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+
+.campfire__log--1 {
+  width: 40px;
+  transform: rotate(-16deg);
+  left: 0;
+}
+
+.campfire__log--2 {
+  width: 40px;
+  transform: rotate(16deg);
+  right: 0;
+}
+
+.campfire__flames {
+  position: relative;
+  width: 26px;
+  height: 42px;
+  margin-bottom: 6px;
+}
+
+.campfire__flame {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50% 50% 35% 35% / 60% 60% 40% 40%;
+  filter: blur(0.5px);
+  animation: flameDance 0.55s ease-in-out infinite alternate;
+}
+
+.campfire__flame--1 {
+  width: 22px;
+  height: 38px;
+  background: linear-gradient(to top, #e63900, #ff8c00);
+  opacity: 0.85;
+}
+
+.campfire__flame--2 {
+  width: 16px;
+  height: 26px;
+  background: linear-gradient(to top, #ff8c00, #ffd700);
+  animation-duration: 0.38s;
+  animation-delay: 0.1s;
+  opacity: 0.95;
+}
+
+.campfire__flame--3 {
+  width: 9px;
+  height: 16px;
+  background: #fff8dc;
+  animation-duration: 0.28s;
+  animation-delay: 0.18s;
+}
+
+@keyframes flameDance {
+  0% { transform: translateX(-50%) scale(0.95, 0.95) rotate(-3deg); }
+  50% { transform: translateX(-50%) scale(1.06, 1.1) rotate(2deg); }
+  100% { transform: translateX(-50%) scale(0.92, 1.05) rotate(4deg); }
+}
+
+/* Walking Dog Paw Prints Trail */
+.paw-trail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  margin: var(--sp-6) auto;
+  max-width: 420px;
+}
+
+.paw-print {
+  display: inline-flex;
+  color: var(--gold);
+  opacity: 0;
+  transform: scale(0.6) rotate(15deg);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-spring);
+}
+
+.paw-print svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.45));
+}
+
+.paw-trail.visible .paw-print {
+  opacity: 0.85;
+  transform: scale(1) rotate(0deg);
+  transition-delay: calc(var(--step) * 220ms);
+}
+
+.paw-print:nth-child(even) {
+  margin-left: 36px;
+  transform: rotate(14deg);
+}
+
+.paw-print:nth-child(odd) {
+  margin-right: 36px;
+  transform: rotate(-14deg);
+}
+
+.paw-trail__label {
+  font-family: var(--font-hand);
+  font-size: 1.2rem;
+  color: var(--terracota);
+  margin-top: var(--sp-3);
+  opacity: 0.9;
+}
+
+/* 3D Tactile Polaroid Tilt & Glare */
+.tilt-card {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.15s ease-out, box-shadow 0.25s ease-out;
+  will-change: transform;
+}
+
+.polaroid__glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.4) 0%, transparent 65%);
+  opacity: 0;
+  transition: opacity 0.25s ease-out;
+  z-index: 4;
+  mix-blend-mode: overlay;
+}
+
+.tilt-card:hover .polaroid__glare {
+  opacity: 1;
+}
+
+.polaroid__badge {
+  position: absolute;
+  top: var(--sp-2);
+  right: var(--sp-2);
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--terracota);
+  background: rgba(253, 251, 247, 0.92);
+  border: 1px dashed var(--terracota);
+  padding: 2px 7px;
+  border-radius: 4px;
+  transform: rotate(6deg);
+  z-index: 6;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* Interactive Passport Stamps */
+.stamp-interactive {
+  position: relative;
+  background: transparent;
+  border: 2px dashed currentColor;
+  color: var(--terracota);
+  cursor: pointer;
+  transition: transform 0.25s var(--ease-spring), box-shadow 0.25s ease, filter 0.25s ease;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: 8px;
+  user-select: none;
+}
+
+.stamp-interactive:hover {
+  transform: scale(1.08) rotate(-3deg);
+  filter: drop-shadow(0 4px 12px var(--terracota-glow));
+}
+
+.stamp-interactive:active,
+.stamp-interactive.stamped {
+  animation: stampPressAnim 0.35s var(--ease-spring);
+}
+
+@keyframes stampPressAnim {
+  0% { transform: scale(1.15) rotate(-6deg); }
+  40% { transform: scale(0.86) rotate(3deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+/* Confetti Celebration Canvas */
+.confetti-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 10001;
+}
+
+/* ─── 30. Floating Watercolor Adventure Stickers ─── */
+.floating-sticker {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  opacity: 0.88;
+  filter: drop-shadow(0 6px 14px rgba(60, 45, 35, 0.08));
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.5s ease;
+  animation: stickerGentleDrift 6s ease-in-out infinite alternate;
+}
+
+@keyframes stickerGentleDrift {
+  0% {
+    transform: translateY(0px) rotate(var(--sticker-rot, 0deg));
+  }
+  50% {
+    transform: translateY(-8px) rotate(calc(var(--sticker-rot, 0deg) + 2deg));
+  }
+  100% {
+    transform: translateY(-3px) rotate(calc(var(--sticker-rot, 0deg) - 1.5deg));
+  }
+}
+
+/* Individual sticker placements */
+.floating-sticker--intro-plane {
+  top: 12%;
+  left: 6%;
+  width: 90px;
+  --sticker-rot: -12deg;
+  animation-duration: 7s;
+}
+
+.floating-sticker--intro-suitcases {
+  bottom: 10%;
+  right: 6%;
+  width: 95px;
+  --sticker-rot: 6deg;
+  animation-duration: 6.5s;
+}
+
+.floating-sticker--ellos-compass {
+  top: 16%;
+  left: 4%;
+  width: 75px;
+  --sticker-rot: 10deg;
+  animation-duration: 8s;
+}
+
+.floating-sticker--ellos-camera {
+  bottom: 12%;
+  right: 5%;
+  width: 80px;
+  --sticker-rot: -8deg;
+  animation-duration: 7.2s;
+}
+
+.floating-sticker--felices-sunhat {
+  top: 8%;
+  right: 6%;
+  width: 85px;
+  --sticker-rot: 15deg;
+  animation-duration: 7.5s;
+}
+
+.floating-sticker--felices-boots {
+  bottom: 8%;
+  left: 5%;
+  width: 80px;
+  --sticker-rot: -6deg;
+  animation-duration: 6.8s;
+}
+
+.floating-sticker--camping-guitar {
+  top: 12%;
+  right: 5%;
+  width: 90px;
+  --sticker-rot: 18deg;
+  animation-duration: 7.8s;
+  opacity: 0.9;
+}
+
+.floating-sticker--camping-lantern {
+  bottom: 14%;
+  left: 5%;
+  width: 75px;
+  --sticker-rot: -5deg;
+  animation-duration: 6.2s;
+  opacity: 0.9;
+}
+
+.floating-sticker--camping-mug {
+  top: 40%;
+  left: 3%;
+  width: 65px;
+  --sticker-rot: 12deg;
+  animation-duration: 8.5s;
+  opacity: 0.85;
+}
+
+.floating-sticker--story-backpack {
+  top: 8%;
+  left: 4%;
+  width: 85px;
+  --sticker-rot: -10deg;
+  animation-duration: 7s;
+}
+
+.floating-sticker--story-picnic {
+  bottom: 8%;
+  right: 4%;
+  width: 90px;
+  --sticker-rot: 8deg;
+  animation-duration: 8.2s;
+}
+
+.floating-sticker--boda-suitcases {
+  top: 10%;
+  right: 5%;
+  width: 90px;
+  --sticker-rot: 6deg;
+  animation-duration: 6.7s;
+}
+
+.floating-sticker--boda-compass {
+  bottom: 8%;
+  left: 5%;
+  width: 75px;
+  --sticker-rot: -12deg;
+  animation-duration: 7.4s;
+}
+
+.floating-sticker--rsvp-kayak {
+  top: 14%;
+  right: 4%;
+  width: 95px;
+  --sticker-rot: -15deg;
+  animation-duration: 8s;
+}
+
+.floating-sticker--rsvp-tent {
+  bottom: 8%;
+  left: 5%;
+  width: 85px;
+  --sticker-rot: 5deg;
+  animation-duration: 7.1s;
+}
+
+/* Ensure sticker doesn't cause overflow or clash on smaller screens */
+@media (max-width: 768px) {
+  .floating-sticker {
+    opacity: 0.6;
+    width: 58px !important;
+  }
+  .floating-sticker--intro-plane { top: 4%; left: 3%; }
+  .floating-sticker--intro-suitcases { bottom: 3%; right: 3%; }
+  .floating-sticker--ellos-compass { top: 6%; left: 2%; }
+  .floating-sticker--ellos-camera { bottom: 4%; right: 2%; }
+  .floating-sticker--felices-sunhat { top: 4%; right: 3%; }
+  .floating-sticker--felices-boots { bottom: 3%; left: 3%; }
+  .floating-sticker--camping-guitar { top: 6%; right: 3%; }
+  .floating-sticker--camping-lantern { bottom: 5%; left: 3%; }
+  .floating-sticker--camping-mug { display: none; }
+  .floating-sticker--story-backpack { top: 4%; left: 2%; }
+  .floating-sticker--story-picnic { bottom: 3%; right: 2%; }
+  .floating-sticker--boda-suitcases { top: 6%; right: 3%; }
+  .floating-sticker--boda-compass { bottom: 4%; left: 3%; }
+  .floating-sticker--rsvp-kayak { top: 6%; right: 3%; }
+  .floating-sticker--rsvp-tent { bottom: 4%; left: 3%; }
+}
+
+/* ─── 31. Reduced Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero__image {
+    transform: none;
+  }
+
+  .seagull {
+    display: none;
+  }
+
+  #film-grain {
+    display: none;
+  }
+}
+
+/* ─── 32. Print Styles ─── */
+@media print {
+  .floating-nav,
+  .music-player,
+  .compass,
+  .scroll-top,
+  .custom-cursor,
+  #film-grain,
+  .seagulls,
+  .lightbox {
+    display: none !important;
+  }
+
+  .hero {
+    height: auto;
+    min-height: auto;
+    page-break-after: always;
+  }
+
+  .section {
+    page-break-inside: avoid;
+  }
+}

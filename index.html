@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO & Open Graph -->
+  <title>Franco & Day · 25.09.2026</title>
+  <meta name="description" content="Dos almas libres. Una misma aventura. Franco & Day se casan el 25 de septiembre de 2026.">
+  <meta property="og:title" content="Franco & Day · 25.09.2026">
+  <meta property="og:description" content="Dos almas libres. Una misma aventura.">
+  <meta property="og:image" content="photos/embrace.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Franco & Day · 25.09.2026">
+  <meta name="twitter:description" content="Dos almas libres. Una misma aventura.">
+  <meta name="twitter:image" content="photos/embrace.jpg">
+  <meta name="theme-color" content="#202321">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+  
+  <!-- Preload critical images -->
+  <link rel="preload" as="image" href="photos/hero.jpg">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="loading">
+
+  <!-- ═══════ Film Grain Overlay ═══════ -->
+  <div id="film-grain"></div>
+
+  <!-- ═══════ Custom Cursor (Desktop) ═══════ -->
+  <div class="custom-cursor" id="customCursor"></div>
+
+  <!-- ═══════ Loading Screen ═══════ -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-screen__text">Franco & Day</div>
+    <div class="loading-screen__line"></div>
+  </div>
+
+  <!-- ═══════ Floating Navigation ═══════ -->
+  <nav class="floating-nav" id="floatingNav">
+    <a href="#love-story" class="floating-nav__link" data-nav="love-story">Historia</a>
+    <a href="#galeria" class="floating-nav__link" data-nav="galeria">Fotos</a>
+    <a href="#boda" class="floating-nav__link" data-nav="boda">Boda</a>
+    <a href="#rsvp" class="floating-nav__link" data-nav="rsvp">RSVP</a>
+  </nav>
+
+  <!-- ═══════ Music Player ═══════ -->
+  <button class="music-player" id="musicPlayer" aria-label="Reproducir música">
+    <div class="music-player__bars">
+      <div class="music-player__bar"></div>
+      <div class="music-player__bar"></div>
+      <div class="music-player__bar"></div>
+      <div class="music-player__bar"></div>
+    </div>
+  </button>
+  <audio id="bgMusic" src="music/weeding song.mp3" preload="auto" loop></audio>
+
+  <!-- ═══════ Compass Easter Egg ═══════ -->
+  <svg class="compass" id="compass" viewBox="0 0 40 40" aria-hidden="true">
+    <circle cx="20" cy="20" r="18" fill="none" stroke="rgba(253,251,247,0.15)" stroke-width="0.5"/>
+    <circle cx="20" cy="20" r="14" fill="none" stroke="rgba(253,251,247,0.08)" stroke-width="0.3"/>
+    <!-- Cardinal marks -->
+    <text x="20" y="7" fill="rgba(253,251,247,0.3)" font-size="3.5" text-anchor="middle" font-family="'DM Sans', sans-serif" letter-spacing="0.5">N</text>
+    <text x="20" y="37" fill="rgba(253,251,247,0.15)" font-size="3" text-anchor="middle" font-family="'DM Sans', sans-serif">S</text>
+    <text x="3" y="21.5" fill="rgba(253,251,247,0.15)" font-size="3" text-anchor="middle" font-family="'DM Sans', sans-serif">W</text>
+    <text x="37" y="21.5" fill="rgba(253,251,247,0.15)" font-size="3" text-anchor="middle" font-family="'DM Sans', sans-serif">E</text>
+    <!-- Needle -->
+    <g class="compass__needle" id="compassNeedle">
+      <line x1="20" y1="10" x2="20" y2="20" stroke="#C98267" stroke-width="1" stroke-linecap="round"/>
+      <line x1="20" y1="20" x2="20" y2="30" stroke="rgba(253,251,247,0.2)" stroke-width="0.8" stroke-linecap="round"/>
+      <circle cx="20" cy="20" r="1.5" fill="#C98267" opacity="0.6"/>
+    </g>
+  </svg>
+
+  <!-- ═══════ Scroll to Top ═══════ -->
+  <button class="scroll-top" id="scrollTop" aria-label="Volver arriba">↑</button>
+
+  <!-- ═══════════════════════════════════════
+       SECTION 1: HERO — Cinematic Entrance
+       ═══════════════════════════════════════ -->
+  <section id="hero" class="hero section">
+    <div class="hero__image-wrapper">
+      <img src="photos/hero.jpg" 
+           alt="Franco y Day en la playa con sus perros" 
+           class="hero__image" 
+           id="heroImage"
+           fetchpriority="high">
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__vignette"></div>
+    
+    <!-- Floating Golden Dust / Sun Motes Canvas -->
+    <canvas class="hero__dust" id="heroDustCanvas" aria-hidden="true"></canvas>
+
+    <!-- Animated Seagulls with Wings -->
+    <div class="seagulls" aria-hidden="true">
+      <svg class="seagull seagull--1" viewBox="0 0 40 20">
+        <ellipse class="seagull__body" cx="20" cy="12" rx="1.6" ry="1.2" fill="rgba(253,251,247,0.9)"/>
+        <path class="seagull__wing seagull__wing--left" d="M20,12 Q11,3 0,7" stroke="rgba(253,251,247,0.85)" fill="none" stroke-width="1.6" stroke-linecap="round"/>
+        <path class="seagull__wing seagull__wing--right" d="M20,12 Q29,3 40,7" stroke="rgba(253,251,247,0.85)" fill="none" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <svg class="seagull seagull--2" viewBox="0 0 40 20">
+        <ellipse class="seagull__body" cx="20" cy="12" rx="1.5" ry="1.1" fill="rgba(253,251,247,0.75)"/>
+        <path class="seagull__wing seagull__wing--left" d="M20,12 Q11,3 0,7" stroke="rgba(253,251,247,0.7)" fill="none" stroke-width="1.4" stroke-linecap="round"/>
+        <path class="seagull__wing seagull__wing--right" d="M20,12 Q29,3 40,7" stroke="rgba(253,251,247,0.7)" fill="none" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      <svg class="seagull seagull--3" viewBox="0 0 40 20">
+        <ellipse class="seagull__body" cx="20" cy="12" rx="1.4" ry="1" fill="rgba(253,251,247,0.6)"/>
+        <path class="seagull__wing seagull__wing--left" d="M20,12 Q11,3 0,7" stroke="rgba(253,251,247,0.6)" fill="none" stroke-width="1.3" stroke-linecap="round"/>
+        <path class="seagull__wing seagull__wing--right" d="M20,12 Q29,3 40,7" stroke="rgba(253,251,247,0.6)" fill="none" stroke-width="1.3" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <div class="hero__content">
+      <h1 class="hero__title">Franco <span>&</span> Day</h1>
+      <p class="hero__tagline">Una historia de amor escrita en kilómetros, atardeceres y aventuras.</p>
+      <p class="hero__date">25 · 09 · 2026</p>
+    </div>
+
+    <div class="hero__scroll">
+      <span class="hero__scroll-text">Deslizá para comenzar la aventura</span>
+      <div class="hero__scroll-arrow">↓</div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 2: INTRODUCTION
+       ═══════════════════════════════════════ -->
+  <section id="intro" class="intro section section--cream">
+    <!-- Floating Watercolor Stickers -->
+    <img src="illustrations/stickers/airplane.png" alt="Avión de viaje" class="floating-sticker floating-sticker--intro-plane" loading="lazy">
+    <img src="illustrations/stickers/suitcases.png" alt="Valijas vintage" class="floating-sticker floating-sticker--intro-suitcases" loading="lazy">
+
+    <div class="intro__line reveal"></div>
+    <p class="intro__quote reveal">
+      "Hay historias que empiezan con un destino.<br>
+      Y hay historias que simplemente empiezan..."
+    </p>
+    <div class="intro__line reveal reveal-delay-2"></div>
+    <p class="intro__text reveal reveal-delay-3">
+      Dos personas.<br>
+      Dos caminos.<br>
+      Miles de kilómetros.<br>
+      Y una aventura que decidieron vivir juntos.
+    </p>
+  </section>
+
+
+  <!-- ═══════ Route Divider ═══════ -->
+  <div class="route-divider section--cream" aria-hidden="true">
+    <div class="route-divider__line"></div>
+    <div class="route-divider__icon">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color: var(--terracota); opacity: 0.4;">
+        <path d="M12 2L12 22M12 2L8 6M12 2L16 6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="route-divider__line"></div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 3: "ELLOS" — Franco + Day
+       ═══════════════════════════════════════ -->
+  <section id="ellos" class="ellos section section--arena">
+    <!-- Floating Watercolor Stickers -->
+    <img src="illustrations/stickers/compass.png" alt="Brújula de expedición" class="floating-sticker floating-sticker--ellos-compass" loading="lazy">
+    <img src="illustrations/stickers/camera.png" alt="Cámara de viaje" class="floating-sticker floating-sticker--ellos-camera" loading="lazy">
+
+    <div class="ellos__header">
+      <h2 class="ellos__title reveal">Franco <span>+</span> Day</h2>
+      <p class="ellos__subtitle reveal reveal-delay-1">"Dos almas inquietas que encontraron su lugar en el mismo camino."</p>
+    </div>
+
+    <div class="ellos__grid">
+      <!-- Diary Page 1 -->
+      <div class="diary-page reveal reveal-delay-1" style="--rotate: -1deg">
+        <img src="photos/embrace.jpg" 
+             alt="Franco y Day abrazados en la playa" 
+             class="diary-page__image"
+             loading="lazy">
+        <div class="diary-page__coords">42°46' S · 65°02' W</div>
+        <div class="diary-page__note">"Nuestro lugar en el mundo."</div>
+        <button type="button" class="diary-page__stamp stamp-interactive" aria-label="Sello de amor">
+          <span>AMOR SALVAJE</span>
+          <small>★ 25.09 ★</small>
+        </button>
+      </div>
+      
+      <!-- Diary Page 2 -->
+      <div class="diary-page reveal reveal-delay-2" style="--rotate: 1.5deg">
+        <img src="photos/hug.jpg" 
+             alt="Franco abrazando a Day junto al mar" 
+             class="diary-page__image"
+             loading="lazy">
+        <div class="diary-page__coords">43°22' S · 65°02' W</div>
+        <div class="diary-page__note">"Nos quedamos hasta que cayó el sol."</div>
+        <button type="button" class="diary-page__stamp stamp-interactive" aria-label="Sello de aventura">
+          <span>DESTINO</span>
+          <small>SIEMPRE JUNTOS</small>
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 4: "DONDE SOMOS FELICES"
+       ═══════════════════════════════════════ -->
+  <section id="felices" class="felices section section--cream">
+    <!-- Floating Watercolor Stickers -->
+    <img src="illustrations/stickers/sunhat.png" alt="Sombrero de viaje" class="floating-sticker floating-sticker--felices-sunhat" loading="lazy">
+    <img src="illustrations/stickers/boots.png" alt="Botas de aventura" class="floating-sticker floating-sticker--felices-boots" loading="lazy">
+
+    <div class="section__text-container">
+      <!-- Minimalist icons row -->
+      <div class="felices__icons reveal">
+        <div class="felices__icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 12C2 12 5 8 12 8C19 8 22 12 22 12C22 12 19 16 12 16C5 16 2 12 2 12Z"/>
+            <path d="M2 17C4 15 6 20 12 18C18 16 20 21 22 19"/>
+          </svg>
+          <span>Mar</span>
+        </div>
+        <div class="felices__icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L7 12H17L12 2Z"/>
+            <path d="M9 12L5 22H19L15 12"/>
+          </svg>
+          <span>Camping</span>
+        </div>
+        <div class="felices__icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17.8 19.2L16 11L12 2L8 11L6.2 19.2"/>
+            <path d="M2 20L6.2 19.2L12 22L17.8 19.2L22 20"/>
+            <path d="M12 2L12 22"/>
+          </svg>
+          <span>Viajes</span>
+        </div>
+        <div class="felices__icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19C4 19 6 15 8 15C10 15 10 17 12 17C14 17 14 14 16 14C18 14 20 19 20 19"/>
+            <circle cx="12" cy="8" r="3"/>
+          </svg>
+          <span>Animales</span>
+        </div>
+        <div class="felices__icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1V3M12 21V23M4.22 4.22L5.64 5.64M18.36 18.36L19.78 19.78M1 12H3M21 12H23M4.22 19.78L5.64 18.36M18.36 5.64L19.78 4.22"/>
+          </svg>
+          <span>Atardeceres</span>
+        </div>
+      </div>
+
+      <!-- Quotes -->
+      <div class="felices__quotes">
+        <p class="felices__quote reveal">"Perdernos para encontrarnos."</p>
+        <p class="felices__quote reveal reveal-delay-1">"Donde termina el camino, empieza la aventura."</p>
+        <p class="felices__quote reveal reveal-delay-2">"Sal, Arena, espuma y amor"</p>
+        <p class="felices__quote reveal reveal-delay-3">"Coleccionamos lugares, risas y abrazos."</p>
+        <p class="felices__quote reveal reveal-delay-4">"Cuidarnos, reírnos y elegirnos en cada viaje. ♥"</p>
+      </div>
+
+      <!-- Illustrated Scrapbook Duo: Casilla Rodante & Franco/Day's Dogs -->
+      <div class="felices__art-duo reveal reveal-delay-2">
+        <div class="art-card" style="--rotate: -2deg">
+          <div class="washi-tape"></div>
+          <img src="illustrations/casilla_rodante.jpg" alt="Ilustración acuarela de casilla rodante en la playa con dunas y flores costeras" class="art-card__image" loading="lazy">
+          <p class="art-card__caption">"Nuestra casilla rodante: miles de kilómetros de libertad."</p>
+        </div>
+        <div class="art-card" style="--rotate: 1.5deg">
+          <div class="washi-tape"></div>
+          <img src="illustrations/dogs.jpg" alt="Ilustración acuarela de los dos perritos de Franco y Day en la playa frente al mar" class="art-card__image" loading="lazy">
+          <p class="art-card__caption">"Nuestros dos copilotos inseparables: amor a cuatro patas."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 5: SEA — Fullscreen Emotional
+       ═══════════════════════════════════════ -->
+  <section id="mar" class="sea section">
+    <div class="sea__image-wrapper">
+      <img src="photos/sea.jpg" 
+           alt="Franco y Day formando un corazón con sus manos frente al mar" 
+           class="sea__image"
+           id="seaImage"
+           loading="lazy">
+    </div>
+    <div class="sea__overlay"></div>
+    
+    <!-- Gliding Seagulls -->
+    <div class="sea__seagulls" aria-hidden="true">
+      <svg class="sea__seagull sea__seagull--1" viewBox="0 0 40 20">
+        <ellipse class="seagull__body" cx="20" cy="12" rx="1.6" ry="1.2" fill="rgba(253,251,247,0.85)"/>
+        <path class="seagull__wing seagull__wing--left" d="M20,12 Q11,3 0,7" stroke="rgba(253,251,247,0.75)" fill="none" stroke-width="1.4" stroke-linecap="round"/>
+        <path class="seagull__wing seagull__wing--right" d="M20,12 Q29,3 40,7" stroke="rgba(253,251,247,0.75)" fill="none" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      <svg class="sea__seagull sea__seagull--2" viewBox="0 0 40 20">
+        <ellipse class="seagull__body" cx="20" cy="12" rx="1.4" ry="1" fill="rgba(253,251,247,0.65)"/>
+        <path class="seagull__wing seagull__wing--left" d="M20,12 Q11,3 0,7" stroke="rgba(253,251,247,0.6)" fill="none" stroke-width="1.2" stroke-linecap="round"/>
+        <path class="seagull__wing seagull__wing--right" d="M20,12 Q29,3 40,7" stroke="rgba(253,251,247,0.6)" fill="none" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <div class="sea__content">
+      <h2 class="sea__title reveal">"Siempre volvemos al mar."</h2>
+      
+      <svg class="wave-separator reveal reveal-delay-1" viewBox="0 0 120 20" fill="none" aria-hidden="true">
+        <path d="M0 10 Q15 0, 30 10 T60 10 T90 10 T120 10" stroke="rgba(253,251,247,0.3)" stroke-width="1" fill="none"/>
+      </svg>
+      
+      <p class="sea__text reveal reveal-delay-2">
+        Porque hay lugares que no solo visitamos.<br>
+        Hay lugares que sentimos.
+      </p>
+      <p class="sea__handwritten reveal reveal-delay-3">siempre volvemos al mar</p>
+    </div>
+
+    <!-- Multi-Layer Moving Ocean Waves -->
+    <div class="sea__waves" aria-hidden="true">
+      <svg class="sea__wave sea__wave--back" viewBox="0 0 1440 90" preserveAspectRatio="none">
+        <path d="M0,30 C240,65 480,15 720,45 C960,75 1200,20 1440,35 L1440,90 L0,90 Z"></path>
+      </svg>
+      <svg class="sea__wave sea__wave--mid" viewBox="0 0 1440 90" preserveAspectRatio="none">
+        <path d="M0,45 C320,20 600,70 920,35 C1160,15 1320,55 1440,40 L1440,90 L0,90 Z"></path>
+      </svg>
+      <svg class="sea__wave sea__wave--front" viewBox="0 0 1440 90" preserveAspectRatio="none">
+        <path d="M0,60 C200,35 440,75 720,50 C1000,25 1240,65 1440,55 L1440,90 L0,90 Z"></path>
+      </svg>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 6: CAMPING & ADVENTURE
+       ═══════════════════════════════════════ -->
+  <section id="camping" class="camping section section--noche">
+    <!-- Floating Watercolor Stickers -->
+    <img src="illustrations/stickers/guitar.png" alt="Guitarra de fogón" class="floating-sticker floating-sticker--camping-guitar" loading="lazy">
+    <img src="illustrations/stickers/lantern.png" alt="Farol de campamento" class="floating-sticker floating-sticker--camping-lantern" loading="lazy">
+    <img src="illustrations/stickers/mug.png" alt="Taza de acampe" class="floating-sticker floating-sticker--camping-mug" loading="lazy">
+
+    <!-- Stars background -->
+    <div class="camping__stars" id="campingStars" aria-hidden="true"></div>
+    <!-- Live Campfire Rising Embers Canvas -->
+    <canvas class="camping__embers-canvas" id="campfireEmbersCanvas" aria-hidden="true"></canvas>
+
+    <div class="camping__content">
+      <div class="camping__question reveal">
+        <span style="font-style: italic;">"¿Nos vamos?"</span>
+      </div>
+      <div class="camping__answer reveal reveal-delay-1">"Siempre."</div>
+
+      <!-- Adventure photos -->
+      <div class="camping__photos">
+        <div class="reveal reveal-delay-1">
+          <img src="photos/mountain.jpg" 
+               alt="Franco y Day en la Patagonia con arcoíris y montañas" 
+               class="camping__photo"
+               loading="lazy">
+        </div>
+        <div class="reveal reveal-delay-2">
+          <img src="photos/canyon.jpg" 
+               alt="Franco y Day tomados de la mano en un cañón" 
+               class="camping__photo"
+               loading="lazy">
+        </div>
+        <div class="reveal reveal-delay-3">
+          <img src="photos/lake.jpg" 
+               alt="Franco y Day junto a un lago patagónico con montañas nevadas" 
+               class="camping__photo"
+               loading="lazy">
+        </div>
+      </div>
+
+      <!-- Storybook Camping Scene Illustration -->
+      <div class="camping-art-vignette reveal reveal-delay-2">
+        <img src="illustrations/camping_scene.jpg" alt="Ilustración acuarela de carpa iluminada, fogata y pinos bajo el cielo estrellado" loading="lazy">
+      </div>
+
+      <!-- Enhanced Living Campfire -->
+      <div class="campfire reveal" id="campfireElement" aria-hidden="true">
+        <div class="campfire__logs">
+          <div class="campfire__log campfire__log--1"></div>
+          <div class="campfire__log campfire__log--2"></div>
+        </div>
+        <div class="campfire__flames">
+          <div class="campfire__flame campfire__flame--1"></div>
+          <div class="campfire__flame campfire__flame--2"></div>
+          <div class="campfire__flame campfire__flame--3"></div>
+        </div>
+        <div class="campfire__glow"></div>
+      </div>
+
+      <!-- Walking Dog Paw Prints Trail -->
+      <div class="paw-trail reveal reveal-delay-2" aria-hidden="true">
+        <div class="paw-print" style="--step: 1">
+          <svg viewBox="0 0 24 24"><ellipse cx="12" cy="15" rx="4.5" ry="3.8"/><circle cx="6.5" cy="9.5" r="2"/><circle cx="10.2" cy="6.8" r="2"/><circle cx="13.8" cy="6.8" r="2"/><circle cx="17.5" cy="9.5" r="2"/></svg>
+        </div>
+        <div class="paw-print" style="--step: 2">
+          <svg viewBox="0 0 24 24"><ellipse cx="12" cy="15" rx="4.5" ry="3.8"/><circle cx="6.5" cy="9.5" r="2"/><circle cx="10.2" cy="6.8" r="2"/><circle cx="13.8" cy="6.8" r="2"/><circle cx="17.5" cy="9.5" r="2"/></svg>
+        </div>
+        <div class="paw-print" style="--step: 3">
+          <svg viewBox="0 0 24 24"><ellipse cx="12" cy="15" rx="4.5" ry="3.8"/><circle cx="6.5" cy="9.5" r="2"/><circle cx="10.2" cy="6.8" r="2"/><circle cx="13.8" cy="6.8" r="2"/><circle cx="17.5" cy="9.5" r="2"/></svg>
+        </div>
+        <div class="paw-print" style="--step: 4">
+          <svg viewBox="0 0 24 24"><ellipse cx="12" cy="15" rx="4.5" ry="3.8"/><circle cx="6.5" cy="9.5" r="2"/><circle cx="10.2" cy="6.8" r="2"/><circle cx="13.8" cy="6.8" r="2"/><circle cx="17.5" cy="9.5" r="2"/></svg>
+        </div>
+        <span class="paw-trail__label">🐾 Los perritos van abriendo camino</span>
+      </div>
+
+      <p class="camping__quote reveal">
+        "Porque nuestro lugar favorito nunca fue un lugar."<br><br>
+        <span style="font-family: var(--font-hand); font-size: 1.3em; color: var(--terracota);">Fue estar juntos.</span>
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 7: CONSTELLATIONS
+       ═══════════════════════════════════════ -->
+  <section id="constelaciones" class="constellations section">
+    <canvas class="constellations__canvas" id="constellationCanvas"></canvas>
+    <div class="constellations__content">
+      <p class="constellations__initials reveal">F & D</p>
+      <p class="constellations__text reveal reveal-delay-2">
+        "De todos los lugares del mundo,<br>terminamos encontrándonos."
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 8: NUESTRA HISTORIA (Escrita por Dayana)
+       ═══════════════════════════════════════ -->
+  <section id="love-story" class="lovestory section section--cream">
+    <!-- Floating Watercolor Stickers -->
+    <img src="illustrations/stickers/backpack.png" alt="Mochila de viaje" class="floating-sticker floating-sticker--story-backpack" loading="lazy">
+    <img src="illustrations/stickers/picnic.png" alt="Canasta de picnic" class="floating-sticker floating-sticker--story-picnic" loading="lazy">
+
+    <div class="lovestory__header">
+      <h2 class="lovestory__title reveal">Nuestra Historia</h2>
+      <p class="lovestory__handwritten reveal reveal-delay-1">en palabras de Day</p>
+    </div>
+
+    <div class="story-letter notebook-paper reveal reveal-delay-2">
+      <!-- Washi tape at top -->
+      <div class="notebook-paper__tape" aria-hidden="true"></div>
+
+      <!-- Spiral binder holes on left margin -->
+      <div class="notebook-paper__holes" aria-hidden="true">
+        <span class="notebook-paper__hole"></span>
+        <span class="notebook-paper__hole"></span>
+        <span class="notebook-paper__hole"></span>
+        <span class="notebook-paper__hole"></span>
+        <span class="notebook-paper__hole"></span>
+        <span class="notebook-paper__hole"></span>
+        <span class="notebook-paper__hole"></span>
+        <span class="notebook-paper__hole"></span>
+        <span class="notebook-paper__hole"></span>
+      </div>
+
+      <!-- Decorative Botanical Wreath Top with Heart -->
+      <div class="story-letter__ornament" aria-hidden="true">
+        <svg viewBox="0 0 160 30" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M10,15 Q40,5 75,15" stroke-linecap="round"/>
+          <path d="M40,12 Q46,6 54,10 Q48,16 40,12 Z" fill="currentColor" opacity="0.45"/>
+          <path d="M60,14 Q66,8 74,12 Q68,18 60,14 Z" fill="currentColor" opacity="0.45"/>
+          <!-- Little love heart center -->
+          <path d="M80,18 C77,14 73,11 73,8 C73,5 76,3 78.5,5 C80,6.5 80,6.5 80,6.5 C80,6.5 80,6.5 81.5,5 C84,3 87,5 87,8 C87,11 83,14 80,18 Z" fill="var(--terracota)" stroke="none" opacity="0.85"/>
+          <path d="M85,15 Q120,5 150,15" stroke-linecap="round"/>
+          <path d="M100,14 Q106,8 114,12 Q108,18 100,14 Z" fill="currentColor" opacity="0.45"/>
+          <path d="M120,15 Q126,9 134,13 Q128,19 120,15 Z" fill="currentColor" opacity="0.45"/>
+        </svg>
+      </div>
+
+      <!-- Passage 1 -->
+      <div class="story-letter__block reveal">
+        <span class="story-letter__chapter">El comienzo</span>
+        <p class="story-letter__paragraph story-letter__paragraph--lead">
+          Nuestra historia no empezó con una gran escena de película.<br>
+          Empezó de una manera mucho más nuestra: con dos personas que, sin saberlo, estaban a punto de encontrarse.
+        </p>
+      </div>
+
+      <!-- Passage 2 -->
+      <div class="story-letter__block reveal">
+        <span class="story-letter__chapter">La complicidad</span>
+        <p class="story-letter__paragraph">
+          Y después llegaron las miradas, las risas, los planes improvisados, los lugares compartidos y esa sensación tan difícil de explicar de haber encontrado a alguien con quien la vida se siente un poquito más linda.
+        </p>
+      </div>
+
+      <!-- Passage 3 -->
+      <div class="story-letter__block reveal">
+        <span class="story-letter__chapter">Todo lo que construimos</span>
+        <p class="story-letter__paragraph">
+          Porque cuando miramos nuestras fotos, no vemos solamente momentos. Vemos todo lo que fuimos construyendo entre nosotros: los días felices, las aventuras, los abrazos, las pequeñas cosas que quizás para otros pasan desapercibidas, pero que para nosotros significan todo.
+        </p>
+      </div>
+
+      <!-- Passage 4 -->
+      <div class="story-letter__block reveal">
+        <span class="story-letter__chapter">Nuestro hogar</span>
+        <p class="story-letter__paragraph">
+          Nos elegimos en los momentos grandes, pero también en los pequeños.<br>
+          Y así, casi sin darnos cuenta, aquel “nosotros” empezó a convertirse en hogar.<br>
+          Hasta llegar a este momento: el de mirarnos y saber que queremos seguir eligiéndonos para todo lo que viene.
+        </p>
+      </div>
+
+      <!-- Emotional Highlight / Interlude -->
+      <div class="story-letter__highlight reveal">
+        <div class="story-letter__quote-mark">“</div>
+        <p class="story-letter__highlight-text">Porque nuestra historia no termina acá.</p>
+        <div class="story-letter__divider-line"></div>
+      </div>
+
+      <!-- Climax -->
+      <div class="story-letter__block reveal">
+        <p class="story-letter__paragraph story-letter__paragraph--climax">
+          Este 25 de septiembre no celebramos solamente una fecha. Celebramos todo el camino que nos trajo hasta acá… y el comienzo de todos los caminos que todavía nos quedan por recorrer juntos.
+        </p>
+      </div>
+
+      <!-- Sign-off & Signatures -->
+      <div class="story-letter__signature reveal">
+        <div class="story-letter__names">Franco & Dayana <span style="color: var(--terracota); font-size: 0.8em;">♥</span></div>
+        <div class="story-letter__motto">Nuestra historia. Nuestro amor. Nuestro para siempre.</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 9: GALLERY — Polaroid Wall
+       ═══════════════════════════════════════ -->
+  <section id="galeria" class="gallery section section--arena">
+    <div class="gallery__header">
+      <h2 class="section-title reveal" style="color: var(--tierra);">Momentos</h2>
+      <p class="handwritten reveal reveal-delay-1" style="color: var(--terracota); opacity: 0.6;">para recordar siempre</p>
+    </div>
+
+    <div class="gallery__grid">
+      <!-- Polaroid 1 -->
+      <div class="gallery__item reveal" data-full="photos/selfie.jpg">
+        <div class="polaroid tilt-card" style="--rotate: -2deg">
+          <div class="washi-tape"></div>
+          <div class="polaroid__glare"></div>
+          <img src="photos/selfie.jpg" 
+               alt="Selfie de Franco y Day en la playa con sus perros" 
+               class="polaroid__image"
+               loading="lazy">
+          <p class="polaroid__caption">"Nosotros."</p>
+        </div>
+      </div>
+
+      <!-- Polaroid 2 -->
+      <div class="gallery__item reveal reveal-delay-1" data-full="photos/fishing.jpg">
+        <div class="polaroid tilt-card" style="--rotate: 1.5deg">
+          <div class="washi-tape"></div>
+          <div class="polaroid__glare"></div>
+          <span class="polaroid__badge stamp-interactive" title="Sello de libertad">PATAGONIA</span>
+          <img src="photos/fishing.jpg" 
+               alt="Franco y Day pescando juntos en la playa" 
+               class="polaroid__image"
+               loading="lazy">
+          <p class="polaroid__caption">"Sin planes."</p>
+        </div>
+      </div>
+
+      <!-- Polaroid 3 -->
+      <div class="gallery__item reveal reveal-delay-2" data-full="photos/hero.jpg">
+        <div class="polaroid tilt-card" style="--rotate: -1deg">
+          <div class="washi-tape"></div>
+          <div class="polaroid__glare"></div>
+          <img src="photos/hero.jpg" 
+               alt="Franco y Day con sus perros en la playa" 
+               class="polaroid__image"
+               loading="lazy">
+          <p class="polaroid__caption">"La familia."</p>
+        </div>
+      </div>
+
+      <!-- Polaroid 4 -->
+      <div class="gallery__item reveal reveal-delay-3" data-full="photos/mountain.jpg">
+        <div class="polaroid tilt-card" style="--rotate: 2deg">
+          <div class="washi-tape"></div>
+          <div class="polaroid__glare"></div>
+          <span class="polaroid__badge stamp-interactive" title="Sello de amor">EXPLORADORES</span>
+          <img src="photos/mountain.jpg" 
+               alt="Franco y Day en la Patagonia con arcoíris" 
+               class="polaroid__image"
+               loading="lazy">
+          <p class="polaroid__caption">"Otro atardecer."</p>
+        </div>
+      </div>
+
+      <!-- Polaroid 5 — Wide -->
+      <div class="gallery__item gallery__item--wide reveal reveal-delay-2" data-full="photos/sea.jpg">
+        <div class="polaroid tilt-card" style="--rotate: -0.5deg">
+          <div class="washi-tape"></div>
+          <div class="polaroid__glare"></div>
+          <img src="photos/sea.jpg" 
+               alt="Franco y Day haciendo un corazón frente al mar" 
+               class="polaroid__image"
+               loading="lazy">
+          <p class="polaroid__caption">"Nuestro lugar."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 10: ATARDECER — Fullscreen Emotional
+       ═══════════════════════════════════════ -->
+  <section id="atardecer" class="atardecer section">
+    <div class="atardecer__image-wrapper">
+      <img src="photos/embrace.jpg" 
+           alt="Franco abrazando a Day en la playa" 
+           class="atardecer__image"
+           id="atardecerImage"
+           loading="lazy">
+    </div>
+    <div class="atardecer__overlay"></div>
+    
+    <div class="atardecer__content">
+      <p class="atardecer__text reveal">
+        "Y si algún día nos preguntan cuál fue nuestro momento favorito..."
+      </p>
+      <p class="atardecer__text atardecer__text--second reveal reveal-delay-3">
+        "...probablemente digamos: todos aquellos en los que estuvimos juntos."
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 11: THE NEXT ADVENTURE — WOW MOMENT
+       ═══════════════════════════════════════ -->
+  <section id="next-adventure" class="wow section">
+    <div class="invitation-frame reveal-scale">
+      <!-- Corner Flourishes -->
+      <svg class="ornament-corner ornament-corner--tl" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M4,28 L4,10 C4,6.686 6.686,4 10,4 L28,4"/>
+        <circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.4"/>
+      </svg>
+      <svg class="ornament-corner ornament-corner--tr" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M4,28 L4,10 C4,6.686 6.686,4 10,4 L28,4"/>
+        <circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.4"/>
+      </svg>
+      <svg class="ornament-corner ornament-corner--bl" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M4,28 L4,10 C4,6.686 6.686,4 10,4 L28,4"/>
+        <circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.4"/>
+      </svg>
+      <svg class="ornament-corner ornament-corner--br" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M4,28 L4,10 C4,6.686 6.686,4 10,4 L28,4"/>
+        <circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.4"/>
+      </svg>
+
+      <!-- Entwined Wedding Rings -->
+      <svg class="wedding-rings reveal" viewBox="0 0 60 40" fill="none" stroke="currentColor">
+        <circle cx="23" cy="20" r="13" stroke-width="2.2"/>
+        <circle cx="37" cy="20" r="13" stroke-width="2.2"/>
+        <circle cx="23" cy="20" r="10.5" stroke-width="0.8" opacity="0.4"/>
+        <circle cx="37" cy="20" r="10.5" stroke-width="0.8" opacity="0.4"/>
+      </svg>
+
+      <div class="wow__pretitle reveal">La Próxima Gran Aventura</div>
+      
+      <!-- Botanical Wreath -->
+      <div class="botanical-wreath reveal reveal-delay-1" aria-hidden="true">
+        <svg class="botanical-branch" viewBox="0 0 80 25" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M75,20 Q45,8 5,12" stroke-linecap="round"/>
+          <path d="M25,12 Q30,6 38,10 Q32,16 25,12 Z" fill="currentColor" opacity="0.5"/>
+          <path d="M45,10 Q50,4 58,8 Q52,14 45,10 Z" fill="currentColor" opacity="0.5"/>
+          <path d="M65,12 Q70,6 78,10 Q72,16 65,12 Z" fill="currentColor" opacity="0.5"/>
+        </svg>
+        <span style="font-family: var(--font-serif); font-size: 0.95rem; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase;">Nuestra Boda</span>
+        <svg class="botanical-branch botanical-branch--right" viewBox="0 0 80 25" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M75,20 Q45,8 5,12" stroke-linecap="round"/>
+          <path d="M25,12 Q30,6 38,10 Q32,16 25,12 Z" fill="currentColor" opacity="0.5"/>
+          <path d="M45,10 Q50,4 58,8 Q52,14 45,10 Z" fill="currentColor" opacity="0.5"/>
+          <path d="M65,12 Q70,6 78,10 Q72,16 65,12 Z" fill="currentColor" opacity="0.5"/>
+        </svg>
+      </div>
+      
+      <div class="wow__title reveal reveal-delay-2">
+        Ahora empieza la aventura más grande.
+      </div>
+      
+      <div class="wow__poem reveal reveal-delay-3">
+        Después de tantos caminos recorridos,<br>
+        tantos lugares descubiertos,<br>
+        tantos atardeceres compartidos...<br><br>
+        decidimos elegirnos para siempre.
+      </div>
+
+      <div class="wow__announcement reveal reveal-delay-4">
+        <div class="wow__date">25 · 09 · 2026</div>
+        <div class="wow__names">Franco & Day</div>
+        <div class="wow__married">se casan</div>
+      </div>
+
+      <!-- 3D Wax Seal with Monogram -->
+      <div class="wax-seal stamp-interactive reveal reveal-delay-4" title="Sello de amor de Franco & Day">
+        <div class="wax-seal__rim"></div>
+        <div class="wax-seal__monogram">F & D</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 12: BODA — Registro Civil
+       ═══════════════════════════════════════ -->
+  <section id="boda" class="boda section section--arena">
+    <!-- Floating Watercolor Stickers -->
+    <img src="illustrations/stickers/suitcases.png" alt="Valijas de viaje" class="floating-sticker floating-sticker--boda-suitcases" loading="lazy">
+    <img src="illustrations/stickers/compass.png" alt="Brújula" class="floating-sticker floating-sticker--boda-compass" loading="lazy">
+
+    <div class="boda__header">
+      <h2 class="section-title reveal" style="color: var(--tierra);">Dónde & Cuándo</h2>
+      <p class="handwritten reveal reveal-delay-1" style="color: var(--terracota); font-size: 1.35rem; margin-top: var(--sp-2);">Los momentos de nuestro gran día</p>
+    </div>
+
+    <div class="boda__grid">
+      <!-- Card 1: Registro Civil -->
+      <div class="boda__card reveal-scale">
+        <div>
+          <div class="boda__destination">Primer Destino · Ceremonia Civil</div>
+          
+          <div class="boda__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--ocean)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+
+          <div class="boda__event">Registro Civil</div>
+          <div class="boda__date-full">Viernes 25 de septiembre de 2026</div>
+          <div class="boda__time">12:00 hs</div>
+          
+          <div class="boda__location">
+            <span>Ameghino 456</span>
+            <span>Trelew, Chubut</span>
+          </div>
+        </div>
+
+        <a href="https://www.google.com/maps/place/Ameghino+456,+U9100+Trelew,+Chubut/@-43.2556285,-65.3158503,17z/data=!3m1!4b1!4m6!3m5!1s0xbe0144c74bdff653:0xd24e508780382429!8m2!3d-43.2556324!4d-65.3132754!16s%2Fg%2F11jvdfpnxz?entry=ttu&g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="boda__map-link"
+           id="mapLinkCivil">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Cómo llegar al Civil
+        </a>
+      </div>
+
+      <!-- Card 2: Salón -->
+      <div class="boda__card reveal-scale reveal-delay-1">
+        <div>
+          <div class="boda__destination">Segundo Destino · Celebración</div>
+          
+          <div class="boda__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--terracota)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 22h8M12 15v7M5 3l7 9 7-9H5z"/>
+            </svg>
+          </div>
+
+          <div class="boda__event">Salón</div>
+          <div class="boda__date-full">Viernes 25 de septiembre de 2026</div>
+          <div class="boda__time">A continuación</div>
+          
+          <div class="boda__location">
+            <span>Playa Unión</span>
+            <span>Rawson, Chubut</span>
+          </div>
+        </div>
+
+        <a href="https://www.google.com/maps/place/43%C2%B022'54.5%22S+65%C2%B002'39.7%22W/@-43.3818016,-65.0469246,17z/data=!3m1!4b1!4m4!3m3!8m2!3d-43.3818016!4d-65.0443497?hl=en&entry=ttu&g_ep=EgoyMDI2MDIwNC4wIKXMDSoASAFQAw%3D%3D" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="boda__map-link boda__map-link--celebration"
+           id="mapLinkSalon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Cómo llegar al Salón
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 13: COUNTDOWN
+       ═══════════════════════════════════════ -->
+  <section id="countdown" class="countdown-section section section--cream">
+    <div class="countdown__label reveal">Faltan</div>
+    
+    <div class="countdown__grid reveal reveal-delay-1">
+      <div class="countdown__item">
+        <div class="countdown__number" id="countDays">--</div>
+        <div class="countdown__unit">Días</div>
+      </div>
+      <div class="countdown__item">
+        <div class="countdown__number" id="countHours">--</div>
+        <div class="countdown__unit">Horas</div>
+      </div>
+      <div class="countdown__item">
+        <div class="countdown__number" id="countMinutes">--</div>
+        <div class="countdown__unit">Minutos</div>
+      </div>
+      <div class="countdown__item">
+        <div class="countdown__number" id="countSeconds">--</div>
+        <div class="countdown__unit">Segundos</div>
+      </div>
+    </div>
+
+    <p class="countdown__subtitle reveal reveal-delay-2">Hasta que comience la gran aventura.</p>
+    <p class="countdown__finished">✨ Hoy comienza nuestra aventura. ✨</p>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 14: RSVP — Postal & WhatsApp
+       ═══════════════════════════════════════ -->
+  <section id="rsvp" class="rsvp section section--arena">
+    <!-- Floating Watercolor Stickers -->
+    <img src="illustrations/stickers/kayak.png" alt="Kayak de travesía" class="floating-sticker floating-sticker--rsvp-kayak" loading="lazy">
+    <img src="illustrations/stickers/tent.png" alt="Carpa de acampe" class="floating-sticker floating-sticker--rsvp-tent" loading="lazy">
+
+    <div class="rsvp__postcard reveal-scale">
+      <!-- Antique Travel Stamp Illustration -->
+      <div class="rsvp__vintage-stamp reveal" style="width: 80px; height: 80px; margin: 0 auto var(--sp-4);">
+        <img src="illustrations/vintage_stamp.jpg" alt="Sello postal vintage de expedición y boda" style="width: 100%; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" loading="lazy">
+      </div>
+
+      <div class="rsvp__pretitle">Una Postal Para Vos</div>
+      
+      <h2 class="rsvp__title">¿Nos acompañás en<br>esta aventura?</h2>
+      
+      <p class="rsvp__text">
+        Hay viajes que se hacen de a dos.<br>
+        Y otros que se disfrutan mucho más rodeados de las personas que queremos.<br>
+        <span style="font-family: var(--font-serif); font-style: italic; color: var(--terracota); font-size: 1.05em;">¡Confirmá tu asistencia por WhatsApp!</span>
+      </p>
+
+      <button class="rsvp__button" id="rsvpButton" aria-label="Confirmar asistencia por WhatsApp">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+        </svg>
+        Confirmar Asistencia
+      </button>
+    </div>
+  </section>
+
+  <!-- Celebration Confetti Canvas -->
+  <canvas id="confettiCanvas" class="confetti-canvas" aria-hidden="true"></canvas>
+
+  <!-- RSVP Toast -->
+  <div class="rsvp__toast" id="rsvpToast">
+    ✈️ ¡Nos encanta que vengas! Abriendo WhatsApp...
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 16: FOOTER — Final Cinematic
+       ═══════════════════════════════════════ -->
+  <footer id="footer" class="footer section">
+    <div class="footer__image-wrapper">
+      <img src="photos/sea.jpg" 
+           alt="Franco y Day mirando el mar juntos" 
+           class="footer__image"
+           loading="lazy">
+      <div class="footer__image-overlay"></div>
+    </div>
+    
+    <div class="footer__content">
+      <p class="footer__beginning reveal">"Y esto recién comienza..."</p>
+      <h3 class="footer__names reveal reveal-delay-1">Franco & Day</h3>
+      <p class="footer__date reveal reveal-delay-2">25 · 09 · 2026</p>
+      
+      <div class="footer__route reveal reveal-delay-3" aria-hidden="true">
+        <div class="footer__route-line"></div>
+      </div>
+      
+      <p class="footer__thanks reveal reveal-delay-4">"Gracias por acompañarnos en esta aventura."</p>
+      
+      <p class="footer__credit">Hecho con ❤️ para Franco & Day</p>
+    </div>
+  </footer>
+
+
+  <!-- ═══════ Lightbox Modal ═══════ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada de fotografía">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar">✕</button>
+    <img class="lightbox__image" id="lightboxImage" src="" alt="Fotografía ampliada">
+  </div>
+
+
+  <!-- JavaScript -->
+  <script src="js/app.js"></script>
+</body>
+</html>
