@@ -1,3 +1,9 @@
+
+@media (max-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
 /* ================================================================
    FRANCO & DAY — Wedding Love Story
    "Dos almas libres. Una misma aventura."
@@ -78,7 +84,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  font-size: 17px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -143,19 +149,19 @@ h1, h2, h3, h4 {
 
 .section-title {
   font-family: var(--font-serif);
-  font-size: clamp(2rem, 4vw + 0.5rem, 3.5rem);
-  font-weight: 600;
+  font-size: clamp(2.2rem, 4.2vw + 0.5rem, 3.8rem);
+  font-weight: 700;
   line-height: 1.15;
   letter-spacing: 0.02em;
 }
 
 .section-subtitle {
   font-family: var(--font-serif);
-  font-size: clamp(1.1rem, 2vw + 0.3rem, 1.5rem);
-  font-weight: 500;
+  font-size: clamp(1.2rem, 2.2vw + 0.3rem, 1.65rem);
+  font-weight: 600;
   font-style: italic;
-  line-height: 1.4;
-  opacity: 0.85;
+  line-height: 1.45;
+  opacity: 0.95;
 }
 
 .body-text {
@@ -174,10 +180,10 @@ h1, h2, h3, h4 {
 
 .label-text {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 0.88rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .big-number {
@@ -297,14 +303,14 @@ h1, h2, h3, h4 {
 
 .floating-nav__link {
   font-family: var(--font-sans);
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.6);
-  padding: var(--sp-2) var(--sp-3);
+  color: rgba(255, 255, 255, 0.8);
+  padding: var(--sp-2) var(--sp-4);
   transition: color var(--t-fast);
   position: relative;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .floating-nav__link::after {
@@ -710,7 +716,9 @@ h1, h2, h3, h4 {
 
 .hero__scroll-text {
   font-family: var(--font-sans);
-  font-size: 0.6rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  opacity: 0.85;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: rgba(253, 251, 247, 0.5);
@@ -938,19 +946,21 @@ h1, h2, h3, h4 {
 
 .diary-page__coords {
   font-family: var(--font-sans);
-  font-size: 0.65rem;
+  font-size: 0.85rem;
   letter-spacing: 0.15em;
   color: var(--ocean);
   margin-top: var(--sp-3);
-  opacity: 0.6;
+  opacity: 0.85;
+  font-weight: 600;
 }
 
 .diary-page__note {
   font-family: var(--font-hand);
-  font-size: 1.1rem;
-  color: var(--tierra);
+  font-size: 1.35rem;
+  color: #1a1714;
   margin-top: var(--sp-2);
-  opacity: 0.7;
+  opacity: 0.95;
+  font-weight: 700;
 }
 
 .diary-page__stamp {
@@ -965,9 +975,10 @@ h1, h2, h3, h4 {
   align-items: center;
   justify-content: center;
   font-family: var(--font-sans);
-  font-size: 0.5rem;
+  font-size: 0.72rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  font-weight: 700;
   color: var(--terracota);
   opacity: 0.35;
   transform: rotate(-15deg);
@@ -1011,7 +1022,8 @@ h1, h2, h3, h4 {
 
 .felices__icon span {
   font-family: var(--font-sans);
-  font-size: 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--tierra);
@@ -1408,7 +1420,7 @@ h1, h2, h3, h4 {
 .story-letter__chapter {
   display: inline-block;
   font-family: var(--font-sans);
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -1551,20 +1563,20 @@ h1, h2, h3, h4 {
 
 .timeline__chapter {
   font-family: var(--font-sans);
-  font-size: 0.65rem;
+  font-size: 0.85rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--ocean);
   margin-bottom: var(--sp-2);
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .timeline__text {
   font-family: var(--font-serif);
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  font-weight: 400;
-  color: var(--tierra);
-  line-height: 1.5;
+  font-size: clamp(1.22rem, 2.2vw, 1.52rem);
+  font-weight: 600;
+  color: #1a1714;
+  line-height: 1.55;
 }
 
 .timeline__item--final .timeline__dot {
@@ -1583,11 +1595,12 @@ h1, h2, h3, h4 {
 
 .timeline__date {
   font-family: var(--font-sans);
-  font-size: 0.7rem;
+  font-size: 0.92rem;
   letter-spacing: 0.15em;
   color: var(--ocean);
   margin-top: var(--sp-2);
-  opacity: 0.5;
+  opacity: 0.85;
+  font-weight: 600;
 }
 
 /* ─── 21. Gallery / Polaroid Wall ─── */
@@ -1641,11 +1654,12 @@ h1, h2, h3, h4 {
 
 .polaroid__caption {
   font-family: var(--font-hand);
-  font-size: 1rem;
-  color: var(--tierra);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1714;
   text-align: center;
   margin-top: var(--sp-3);
-  opacity: 0.65;
+  opacity: 0.95;
 }
 
 /* Wide gallery item */
@@ -1747,32 +1761,33 @@ h1, h2, h3, h4 {
 
 .wow__pretitle {
   font-family: var(--font-sans);
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--ocean);
   margin-bottom: var(--sp-6);
-  opacity: 0.6;
+  opacity: 0.85;
+  font-weight: 700;
 }
 
 .wow__title {
   font-family: var(--font-serif);
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  font-weight: 500;
-  color: var(--tierra);
+  font-size: clamp(2rem, 4.2vw, 3.4rem);
+  font-weight: 700;
+  color: #1a1714;
   margin-bottom: var(--sp-7);
   line-height: 1.3;
 }
 
 .wow__poem {
   font-family: var(--font-serif);
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-  font-weight: 500;
+  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+  font-weight: 600;
   font-style: italic;
-  color: var(--tierra);
+  color: #1a1714;
   line-height: 2;
-  opacity: 0.75;
-  max-width: 450px;
+  opacity: 0.95;
+  max-width: 500px;
   margin: 0 auto var(--sp-8);
 }
 
@@ -1791,11 +1806,11 @@ h1, h2, h3, h4 {
 
 .wow__names {
   font-family: var(--font-serif);
-  font-size: clamp(1.4rem, 3vw, 2.2rem);
-  font-weight: 400;
+  font-size: clamp(1.5rem, 3.2vw, 2.4rem);
+  font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--tierra);
+  color: #1a1714;
   margin-bottom: var(--sp-3);
 }
 
@@ -1887,12 +1902,13 @@ h1, h2, h3, h4 {
 
 .boda__destination {
   font-family: var(--font-sans);
-  font-size: 0.65rem;
+  font-size: 0.85rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--ocean);
   margin-bottom: var(--sp-5);
-  opacity: 0.6;
+  opacity: 0.85;
+  font-weight: 700;
 }
 
 .boda__icon {
@@ -1904,36 +1920,36 @@ h1, h2, h3, h4 {
 
 .boda__event {
   font-family: var(--font-serif);
-  font-size: clamp(1.5rem, 3vw, 2.1rem);
-  font-weight: 500;
-  color: var(--tierra);
+  font-size: clamp(1.65rem, 3.2vw, 2.3rem);
+  font-weight: 700;
+  color: #1a1714;
   margin-bottom: var(--sp-3);
 }
 
 .boda__date-full {
   font-family: var(--font-sans);
-  font-size: 0.95rem;
-  color: var(--tierra);
+  font-size: 1.15rem;
+  color: #1a1714;
   margin-bottom: var(--sp-2);
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .boda__time {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: var(--terracota);
-  font-weight: 500;
+  font-weight: 700;
   margin-bottom: var(--sp-4);
 }
 
 .boda__location {
   font-family: var(--font-sans);
-  font-size: 0.9rem;
-  color: var(--tierra);
-  opacity: 0.8;
+  font-size: 1.1rem;
+  color: #1a1714;
+  opacity: 0.95;
   margin-bottom: var(--sp-6);
-  font-weight: 400;
-  line-height: 1.4;
+  font-weight: 600;
+  line-height: 1.5;
 }
 
 .boda__location span {
@@ -1946,15 +1962,15 @@ h1, h2, h3, h4 {
   justify-content: center;
   gap: var(--sp-2);
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 0.92rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--cream);
   background: var(--ocean);
-  padding: var(--sp-3) var(--sp-6);
+  padding: 14px 28px;
   border-radius: 100px;
   transition: all var(--t-normal);
-  font-weight: 500;
+  font-weight: 700;
   text-decoration: none;
   width: 100%;
   max-width: 280px;
@@ -1990,12 +2006,13 @@ h1, h2, h3, h4 {
 
 .countdown__label {
   font-family: var(--font-sans);
-  font-size: 0.7rem;
+  font-size: 0.95rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--ocean);
   margin-bottom: var(--sp-7);
-  opacity: 0.5;
+  opacity: 0.85;
+  font-weight: 700;
 }
 
 .countdown__grid {
@@ -2012,29 +2029,30 @@ h1, h2, h3, h4 {
 
 .countdown__number {
   font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 8vw, 5rem);
-  font-weight: 500;
-  color: var(--tierra);
+  font-size: clamp(3rem, 9vw, 5.8rem);
+  font-weight: 700;
+  color: #1a1714;
   line-height: 1;
   margin-bottom: var(--sp-2);
 }
 
 .countdown__unit {
   font-family: var(--font-sans);
-  font-size: 0.6rem;
+  font-size: 0.85rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--tierra);
-  opacity: 0.4;
+  color: var(--ocean-deep);
+  opacity: 0.85;
+  font-weight: 700;
 }
 
 .countdown__subtitle {
   font-family: var(--font-serif);
-  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-  font-weight: 500;
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  font-weight: 600;
   font-style: italic;
   color: var(--ocean);
-  opacity: 0.5;
+  opacity: 0.85;
 }
 
 .countdown__finished {
@@ -2106,32 +2124,33 @@ h1, h2, h3, h4 {
 
 .rsvp__pretitle {
   font-family: var(--font-sans);
-  font-size: 0.6rem;
+  font-size: 0.88rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--ocean);
   margin-bottom: var(--sp-5);
-  opacity: 0.5;
+  opacity: 0.85;
+  font-weight: 700;
 }
 
 .rsvp__title {
   font-family: var(--font-serif);
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  font-weight: 500;
-  color: var(--tierra);
+  font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  color: #1a1714;
   margin-bottom: var(--sp-4);
 }
 
 .rsvp__text {
   font-family: var(--font-serif);
-  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
-  font-weight: 500;
+  font-size: clamp(1.15rem, 1.6vw, 1.32rem);
+  font-weight: 600;
   font-style: italic;
-  color: var(--tierra);
+  color: #1a1714;
   line-height: 1.7;
-  opacity: 0.7;
+  opacity: 0.95;
   margin-bottom: var(--sp-6);
-  max-width: 400px;
+  max-width: 460px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -2141,15 +2160,15 @@ h1, h2, h3, h4 {
   align-items: center;
   gap: var(--sp-2);
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: 1.05rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--cream);
   background: var(--terracota);
-  padding: var(--sp-4) var(--sp-6);
+  padding: 16px 36px;
   border-radius: 100px;
   transition: all var(--t-normal);
-  font-weight: 500;
+  font-weight: 700;
   box-shadow: 0 4px 16px var(--terracota-glow);
   cursor: pointer;
 }
@@ -2200,7 +2219,8 @@ h1, h2, h3, h4 {
 
 .dresscode__title {
   font-family: var(--font-sans);
-  font-size: 0.7rem;
+  font-size: 0.9rem;
+  font-weight: 700;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--ocean);
@@ -2264,35 +2284,40 @@ h1, h2, h3, h4 {
 
 .footer__beginning {
   font-family: var(--font-serif);
-  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-  font-weight: 500;
+  font-size: clamp(1.45rem, 2.8vw, 2.1rem);
+  font-weight: 600;
   font-style: italic;
-  opacity: 0.8;
+  opacity: 0.95;
+  color: var(--cream);
   margin-bottom: var(--sp-6);
 }
 
 .footer__names {
   font-family: var(--font-serif);
-  font-size: clamp(1.6rem, 4vw, 2.5rem);
-  font-weight: 500;
+  font-size: clamp(1.85rem, 4.5vw, 2.8rem);
+  font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  color: var(--cream);
   margin-bottom: var(--sp-3);
 }
 
 .footer__date {
   font-family: var(--font-sans);
-  font-size: 0.85rem;
+  font-size: 1.05rem;
   letter-spacing: 0.3em;
-  opacity: 0.5;
+  opacity: 0.85;
+  font-weight: 600;
+  color: var(--cream);
   margin-bottom: var(--sp-6);
 }
 
 .footer__thanks {
   font-family: var(--font-hand);
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
   color: var(--terracota);
-  opacity: 0.6;
+  opacity: 0.95;
+  font-weight: 700;
   margin-bottom: var(--sp-7);
 }
 
@@ -2326,10 +2351,10 @@ h1, h2, h3, h4 {
 
 .footer__credit {
   font-family: var(--font-sans);
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-size: 1.02rem;
+  font-weight: 600;
   letter-spacing: 0.05em;
-  opacity: 0.85;
+  opacity: 0.95;
   margin-top: var(--sp-6);
   display: flex;
   align-items: center;
@@ -2482,7 +2507,7 @@ h1, h2, h3, h4 {
   }
 
   .floating-nav__link {
-    font-size: 0.72rem;
+    font-size: 0.85rem;
     padding: var(--sp-2) var(--sp-4);
   }
 
@@ -3055,7 +3080,7 @@ h1, h2, h3, h4 {
   top: var(--sp-2);
   right: var(--sp-2);
   font-family: var(--font-sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   color: var(--terracota);
