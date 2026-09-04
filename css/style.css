@@ -684,7 +684,7 @@ h1, h2, h3, h4 {
 
 .hero__tagline {
   font-family: var(--font-serif);
-  font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
   font-weight: 500;
   font-style: italic;
   letter-spacing: 0.08em;
@@ -696,7 +696,7 @@ h1, h2, h3, h4 {
 
 .hero__date {
   font-family: var(--font-sans);
-  font-size: clamp(0.8rem, 1.2vw, 1rem);
+  font-size: clamp(1.18rem, 1.6vw, 1.42rem);
   letter-spacing: 0.35em;
   font-weight: 500;
   opacity: 0;
@@ -898,7 +898,7 @@ h1, h2, h3, h4 {
 
 .ellos__subtitle {
   font-family: var(--font-serif);
-  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  font-size: clamp(1.22rem, 2vw, 1.45rem);
   font-weight: 500;
   font-style: italic;
   color: var(--tierra);
@@ -1037,7 +1037,7 @@ h1, h2, h3, h4 {
 
 .felices__quote {
   font-family: var(--font-serif);
-  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
   font-weight: 500;
   font-style: italic;
   color: var(--tierra);
@@ -1106,7 +1106,7 @@ h1, h2, h3, h4 {
 
 .sea__text {
   font-family: var(--font-serif);
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-size: clamp(1.22rem, 1.8vw, 1.45rem);
   font-weight: 500;
   line-height: 1.8;
   opacity: 0.85;
@@ -1197,7 +1197,7 @@ h1, h2, h3, h4 {
 
 .camping__quote {
   font-family: var(--font-serif);
-  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
   font-weight: 500;
   font-style: italic;
   opacity: 0.7;
@@ -1286,7 +1286,7 @@ h1, h2, h3, h4 {
 
 .constellations__text {
   font-family: var(--font-serif);
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
   font-weight: 500;
   font-style: italic;
   opacity: 0.7;
@@ -2230,7 +2230,7 @@ h1, h2, h3, h4 {
 
 .dresscode__text {
   font-family: var(--font-serif);
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-size: clamp(1.3rem, 2.2vw, 1.55rem);
   font-weight: 500;
   font-style: italic;
   color: var(--tierra);
@@ -3366,48 +3366,398 @@ h1, h2, h3, h4 {
 
 /* ─── Mobile Typography & Legibility Boost ─── */
 @media (max-width: 768px) {
+  html {
+    font-size: 18px !important;
+  }
+  
   body {
-    font-weight: 500;
+    font-size: 1.18rem !important;
+    font-weight: 550 !important;
+    color: #1a1714 !important;
+    line-height: 1.75 !important;
   }
+  
   p, .body-text {
-    font-weight: 500;
-    line-height: 1.65;
+    font-size: 1.25rem !important;
+    font-weight: 550 !important;
+    line-height: 1.75 !important;
+    color: #1a1714 !important;
   }
-  h1, h2, h3, h4, .display-title, .section-title {
-    font-weight: 600;
+
+  h1, h2, h3, h4 {
+    font-weight: 700 !important;
   }
-  .section-subtitle, .intro__quote, .felices__quote {
-    font-weight: 600;
-    opacity: 0.98;
+  .display-title {
+    font-size: 2.9rem !important;
+    font-weight: 700 !important;
   }
-  .handwritten, .diary-page__note {
-    font-weight: 700;
+  .section-title {
+    font-size: 2.35rem !important;
+    font-weight: 700 !important;
+    color: #151311 !important;
   }
-  .itinerary-card__desc, .story-card__text {
-    font-weight: 500;
+  .section-subtitle {
+    font-size: 1.38rem !important;
+    font-weight: 600 !important;
+    opacity: 1 !important;
+    color: #24201b !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Hero */
+  .hero__title {
+    font-size: 3.4rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.12em !important;
+  }
+  .hero__tagline {
+    font-size: 1.38rem !important;
+    font-weight: 600 !important;
+    color: #FAF8F2 !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9) !important;
+    opacity: 1 !important;
+    line-height: 1.5 !important;
+  }
+  .hero__date {
+    font-size: 1.38rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.3em !important;
+    color: #FAF8F2 !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9) !important;
+    opacity: 1 !important;
+  }
+  .hero__scroll-text {
+    font-size: 1rem !important;
+    font-weight: 800 !important;
+    opacity: 0.95 !important;
+  }
+
+  /* Navigation */
+  .floating-nav__link {
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.15em !important;
+  }
+
+  /* Intro Section */
+  .intro__quote {
+    font-size: 1.6rem !important;
+    font-weight: 600 !important;
+    color: #151311 !important;
+    line-height: 1.6 !important;
+    opacity: 1 !important;
+  }
+  .intro__text {
+    font-size: 1.38rem !important;
+    font-weight: 600 !important;
+    color: #1a1714 !important;
+    line-height: 1.8 !important;
+    opacity: 1 !important;
+  }
+
+  /* Diary Pages (Ellos) */
+  .diary-page__coords {
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    color: var(--ocean-deep) !important;
+    opacity: 1 !important;
+  }
+  .diary-page__note {
+    font-size: 1.55rem !important;
+    font-weight: 700 !important;
+    color: #151311 !important;
+    opacity: 1 !important;
+  }
+  .diary-page__stamp {
+    font-size: 0.88rem !important;
+    font-weight: 700 !important;
+  }
+  .diary-page__stamp span {
+    font-size: 0.85rem !important;
+    font-weight: 800 !important;
+  }
+  .diary-page__stamp small {
+    font-size: 0.78rem !important;
+    font-weight: 700 !important;
+  }
+
+  /* Donde somos felices */
+  .felices__quote {
+    font-size: 1.48rem !important;
+    font-weight: 600 !important;
+    color: #151311 !important;
+    opacity: 1 !important;
+    line-height: 1.6 !important;
   }
   .art-card__caption {
-    font-weight: 600;
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    color: #151311 !important;
+    opacity: 1 !important;
   }
-  .details__cbu, .details__alias {
-    font-weight: 700;
+
+  /* Sea & Camping & Constellations */
+  .sea__title {
+    font-size: 2.3rem !important;
+    font-weight: 700 !important;
   }
-  .countdown__label {
-    font-weight: 600;
+  .sea__text {
+    font-size: 1.32rem !important;
+    font-weight: 550 !important;
+    color: #FAF8F2 !important;
+    opacity: 1 !important;
+    line-height: 1.8 !important;
   }
-  /* Renglones en celular ajustados a 38px exactos */
+  .camping__question {
+    font-size: 2.4rem !important;
+    font-weight: 700 !important;
+  }
+  .camping__quote {
+    font-size: 1.38rem !important;
+    font-weight: 600 !important;
+    color: #FAF8F2 !important;
+    opacity: 1 !important;
+    line-height: 1.7 !important;
+  }
+  .constellations__text {
+    font-size: 1.38rem !important;
+    font-weight: 600 !important;
+    color: #FAF8F2 !important;
+    opacity: 1 !important;
+  }
+  .constellations__initials {
+    font-size: 2.1rem !important;
+    font-weight: 700 !important;
+  }
+
+  /* Love Story Letter (Notebook Paper) */
+  .story-letter__chapter {
+    font-size: 1rem !important;
+    font-weight: 800 !important;
+    padding: 6px 18px !important;
+  }
   .story-letter__paragraph {
-    font-size: 1.15rem;
-    line-height: 38px;
-    background-size: 100% 38px;
+    font-size: 1.28rem !important;
+    font-weight: 600 !important;
+    color: #141210 !important;
+    line-height: 44px !important;
+    background-size: 100% 44px !important;
     background-image: repeating-linear-gradient(
       to bottom,
       transparent 0px,
-      transparent 31px,
-      rgba(135, 170, 200, 0.45) 31px,
-      rgba(135, 170, 200, 0.45) 32.5px,
-      transparent 32.5px,
-      transparent 38px
-    );
+      transparent 36px,
+      rgba(135, 170, 200, 0.5) 36px,
+      rgba(135, 170, 200, 0.5) 37.5px,
+      transparent 37.5px,
+      transparent 44px
+    ) !important;
+  }
+  .story-letter__paragraph--lead {
+    font-size: 1.34rem !important;
+    font-weight: 600 !important;
+    color: #000000 !important;
+  }
+  .story-letter__highlight-text {
+    font-size: 1.65rem !important;
+    font-weight: 700 !important;
+    line-height: 1.5 !important;
+    color: var(--terracota) !important;
+  }
+  .story-letter__paragraph--climax {
+    font-size: 1.32rem !important;
+    font-weight: 600 !important;
+    line-height: 44px !important;
+  }
+  .story-letter__names {
+    font-size: 2.3rem !important;
+    font-weight: 700 !important;
+  }
+  .story-letter__motto {
+    font-size: 1.6rem !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+  }
+
+  /* Timeline */
+  .timeline__chapter {
+    font-size: 1.05rem !important;
+    font-weight: 800 !important;
+  }
+  .timeline__text {
+    font-size: 1.38rem !important;
+    font-weight: 600 !important;
+    color: #151311 !important;
+    line-height: 1.6 !important;
+  }
+  .timeline__date {
+    font-size: 1.08rem !important;
+    font-weight: 700 !important;
+    opacity: 0.95 !important;
+  }
+
+  /* Polaroid Wall */
+  .polaroid__caption {
+    font-size: 1.48rem !important;
+    font-weight: 700 !important;
+    color: #151311 !important;
+    opacity: 1 !important;
+  }
+
+  /* Sunset / WOW */
+  .atardecer__text {
+    font-size: 1.55rem !important;
+    font-weight: 600 !important;
+    color: #FAF8F2 !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9) !important;
+  }
+  .wow__pretitle {
+    font-size: 1.08rem !important;
+    font-weight: 800 !important;
+    opacity: 0.95 !important;
+  }
+  .wow__title {
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+  }
+  .wow__poem {
+    font-size: 1.38rem !important;
+    font-weight: 600 !important;
+    color: #151311 !important;
+    line-height: 1.8 !important;
+    opacity: 1 !important;
+  }
+  .wow__date {
+    font-size: 3.1rem !important;
+    font-weight: 700 !important;
+  }
+  .wow__names {
+    font-size: 1.85rem !important;
+    font-weight: 700 !important;
+  }
+
+  /* Boda (Registro Civil & Salón) */
+  .boda__destination {
+    font-size: 1.08rem !important;
+    font-weight: 800 !important;
+    opacity: 0.95 !important;
+  }
+  .boda__event {
+    font-size: 2.1rem !important;
+    font-weight: 700 !important;
+    color: #151311 !important;
+  }
+  .boda__date-full {
+    font-size: 1.35rem !important;
+    font-weight: 700 !important;
+    color: #151311 !important;
+  }
+  .boda__time {
+    font-size: 2.2rem !important;
+    font-weight: 800 !important;
+  }
+  .boda__location {
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
+    color: #151311 !important;
+    line-height: 1.6 !important;
+    opacity: 1 !important;
+  }
+  .boda__map-link {
+    font-size: 1.15rem !important;
+    font-weight: 800 !important;
+    padding: 16px 32px !important;
+  }
+
+  /* Countdown */
+  .countdown__label {
+    font-size: 1.15rem !important;
+    font-weight: 800 !important;
+    opacity: 0.95 !important;
+  }
+  .countdown__number {
+    font-size: 3.5rem !important;
+    font-weight: 800 !important;
+    color: #151311 !important;
+  }
+  .countdown__unit {
+    font-size: 1.08rem !important;
+    font-weight: 800 !important;
+    color: var(--ocean-deep) !important;
+    opacity: 1 !important;
+  }
+  .countdown__subtitle {
+    font-size: 1.38rem !important;
+    font-weight: 600 !important;
+    opacity: 1 !important;
+    color: var(--ocean-deep) !important;
+  }
+
+  /* RSVP */
+  .rsvp__pretitle {
+    font-size: 1.08rem !important;
+    font-weight: 800 !important;
+    opacity: 0.95 !important;
+  }
+  .rsvp__title {
+    font-size: 2.25rem !important;
+    font-weight: 700 !important;
+    color: #151311 !important;
+  }
+  .rsvp__text {
+    font-size: 1.34rem !important;
+    font-weight: 600 !important;
+    color: #151311 !important;
+    line-height: 1.75 !important;
+    opacity: 1 !important;
+  }
+  .rsvp__button {
+    font-size: 1.2rem !important;
+    font-weight: 800 !important;
+    padding: 18px 36px !important;
+  }
+
+  /* Dresscode */
+  .dresscode__title {
+    font-size: 1.08rem !important;
+    font-weight: 800 !important;
+  }
+  .dresscode__text {
+    font-size: 1.38rem !important;
+    font-weight: 600 !important;
+    color: #151311 !important;
+  }
+
+  /* Footer */
+  .footer__beginning {
+    font-size: 1.68rem !important;
+    font-weight: 600 !important;
+    color: var(--cream) !important;
+    opacity: 1 !important;
+  }
+  .footer__names {
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    color: var(--cream) !important;
+  }
+  .footer__date {
+    font-size: 1.35rem !important;
+    font-weight: 700 !important;
+    color: var(--cream) !important;
+    opacity: 1 !important;
+  }
+  .footer__thanks {
+    font-size: 1.65rem !important;
+    font-weight: 700 !important;
+    color: var(--terracota) !important;
+    opacity: 1 !important;
+  }
+  .footer__credit {
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+    opacity: 1 !important;
+  }
+  .footer__heart-btn {
+    font-size: 1.7rem !important;
+    padding: 6px 12px !important;
   }
 }
