@@ -85,8 +85,8 @@ html {
 
 body {
   font-family: var(--font-sans);
-  font-weight: 450;
-  color: var(--tierra);
+  font-weight: 500;
+  color: #24201c;
   background-color: var(--carbon);
   line-height: 1.6;
   overflow-x: hidden;
@@ -1333,17 +1333,11 @@ h1, h2, h3, h4 {
 /* ─── Hoja de Libreta Arrancada (Notebook Paper) ─── */
 .notebook-paper {
   background-color: #FAF8F4 !important;
-  /* Lined notebook paper texture: subtle blue-grey lines */
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent 0px,
-    transparent 32px,
-    rgba(165, 185, 205, 0.38) 32px,
-    rgba(165, 185, 205, 0.38) 33px
-  ) !important;
-  background-position: 0 45px !important;
   border: 1px solid rgba(215, 205, 190, 0.75) !important;
   border-left: 3px solid rgba(195, 180, 160, 0.8) !important;
+  background-image: radial-gradient(#dcd5c9 0.75px, transparent 0.75px) !important;
+  background-size: 24px 24px !important;
+  background-position: 0 0 !important;
 }
 
 /* Washi tape holding the notebook sheet */
@@ -1414,8 +1408,8 @@ h1, h2, h3, h4 {
 .story-letter__chapter {
   display: inline-block;
   font-family: var(--font-sans);
-  font-size: 0.68rem;
-  font-weight: 500;
+  font-size: 0.72rem;
+  font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--terracota);
@@ -1428,17 +1422,31 @@ h1, h2, h3, h4 {
 
 .story-letter__paragraph {
   font-family: var(--font-serif);
-  font-size: clamp(1.15rem, 2.2vw, 1.38rem);
-  font-weight: 400;
-  line-height: 1.85;
-  color: var(--tierra);
+  font-size: clamp(1.22rem, 2.3vw, 1.46rem);
+  font-weight: 600;
+  line-height: 42px;
+  color: #1a1714;
   max-width: 660px;
   margin: 0 auto;
+  /* Renglones de libreta milimétricamente alineados a la base del texto */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 34px,
+    rgba(135, 170, 200, 0.45) 34px,
+    rgba(135, 170, 200, 0.45) 35.5px,
+    transparent 35.5px,
+    transparent 42px
+  );
+  background-size: 100% 42px;
+  background-repeat: repeat-y;
+  padding: 0 8px;
 }
 
 .story-letter__paragraph--lead {
-  font-size: clamp(1.22rem, 2.4vw, 1.45rem);
-  color: #1F2220;
+  font-size: clamp(1.26rem, 2.4vw, 1.48rem);
+  font-weight: 600;
+  color: #141210;
 }
 
 .story-letter__highlight {
@@ -1476,10 +1484,10 @@ h1, h2, h3, h4 {
 }
 
 .story-letter__paragraph--climax {
-  font-size: clamp(1.18rem, 2.3vw, 1.42rem);
-  font-weight: 500;
-  color: var(--tierra);
-  line-height: 1.8;
+  font-size: clamp(1.24rem, 2.3vw, 1.46rem);
+  font-weight: 600;
+  color: #141210;
+  line-height: 42px;
 }
 
 .story-letter__signature {
@@ -3344,8 +3352,8 @@ h1, h2, h3, h4 {
     font-weight: 600;
   }
   .section-subtitle, .intro__quote, .felices__quote {
-    font-weight: 500;
-    opacity: 0.95;
+    font-weight: 600;
+    opacity: 0.98;
   }
   .handwritten, .diary-page__note {
     font-weight: 700;
@@ -3357,9 +3365,24 @@ h1, h2, h3, h4 {
     font-weight: 600;
   }
   .details__cbu, .details__alias {
-    font-weight: 600;
+    font-weight: 700;
   }
   .countdown__label {
     font-weight: 600;
+  }
+  /* Renglones en celular ajustados a 38px exactos */
+  .story-letter__paragraph {
+    font-size: 1.15rem;
+    line-height: 38px;
+    background-size: 100% 38px;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 31px,
+      rgba(135, 170, 200, 0.45) 31px,
+      rgba(135, 170, 200, 0.45) 32.5px,
+      transparent 32.5px,
+      transparent 38px
+    );
   }
 }
