@@ -277,40 +277,45 @@ h1, h2, h3, h4 {
   to { transform: scaleX(1); }
 }
 
-/* ─── 6. Floating Navigation ─── */
+/* ─── 6. Floating Navigation (Pill discreto) ─── */
 .floating-nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 10px;
+  left: 50%;
+  right: auto;
   z-index: var(--z-nav);
-  padding: var(--sp-4) var(--sp-5);
+  padding: 3px 12px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: var(--sp-6);
-  transform: translateY(-100%);
-  transition: transform 0.5s var(--ease-out), background 0.5s;
-  background: rgba(32, 35, 33, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  gap: 4px;
+  transform: translate(-50%, -150%);
+  transition: transform 0.4s var(--ease-out);
+  background: rgba(26, 28, 27, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  max-width: fit-content;
+  width: auto;
 }
 
 .floating-nav.visible {
-  transform: translateY(0);
+  transform: translate(-50%, 0);
 }
 
 .floating-nav__link {
   font-family: var(--font-sans);
-  font-size: 0.85rem;
-  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.8);
-  padding: var(--sp-2) var(--sp-4);
+  color: rgba(255, 255, 255, 0.75);
+  padding: 3px 8px;
   transition: color var(--t-fast);
   position: relative;
   font-weight: 600;
+  border-radius: 999px;
 }
 
 .floating-nav__link::after {
@@ -2351,15 +2356,16 @@ h1, h2, h3, h4 {
 
 .footer__credit {
   font-family: var(--font-sans);
-  font-size: 1.02rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  opacity: 0.95;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: #726d66;
+  opacity: 0.75;
   margin-top: var(--sp-6);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 4px;
 }
 
 .footer__heart-btn {
@@ -2367,24 +2373,21 @@ h1, h2, h3, h4 {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  font-size: 1.3rem;
+  font-size: 0.82rem;
   line-height: 1;
-  padding: 4px 8px;
+  padding: 1px 3px;
   border-radius: 999px;
   cursor: pointer;
   transform-origin: center;
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease, background-color 0.3s ease;
-  animation: heartPulse 2.2s ease-in-out infinite;
-  background: rgba(201, 130, 103, 0.15);
-  border: 1px solid rgba(201, 130, 103, 0.3);
+  transition: transform 0.3s ease;
+  animation: heartPulse 2.5s ease-in-out infinite;
+  background: transparent;
+  border: none;
 }
 
 .footer__heart-btn:hover,
 .footer__heart-btn:focus-visible {
-  transform: scale(1.3);
-  background: rgba(201, 130, 103, 0.3);
-  border-color: rgba(201, 130, 103, 0.6);
-  filter: drop-shadow(0 0 10px rgba(201, 130, 103, 0.6));
+  transform: scale(1.2);
 }
 
 @keyframes heartPulse {
@@ -3404,39 +3407,112 @@ h1, h2, h3, h4 {
     line-height: 1.5 !important;
   }
 
-  /* Hero */
-  .hero__title {
-    font-size: 3.4rem !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.12em !important;
-  }
-  .hero__tagline {
-    font-size: 1.38rem !important;
-    font-weight: 600 !important;
-    color: #FAF8F2 !important;
-    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9) !important;
-    opacity: 1 !important;
-    line-height: 1.5 !important;
-  }
-  .hero__date {
-    font-size: 1.38rem !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.3em !important;
-    color: #FAF8F2 !important;
-    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9) !important;
-    opacity: 1 !important;
-  }
-  .hero__scroll-text {
-    font-size: 1rem !important;
-    font-weight: 800 !important;
-    opacity: 0.95 !important;
+  /* ─── Hero en móvil: caras despejadas, Franco & Day arriba, resto abajo ─── */
+  .hero {
+    position: relative !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 580px !important;
+    overflow: hidden !important;
   }
 
-  /* Navigation */
+  .hero__image {
+    object-fit: cover !important;
+    object-position: center 36% !important;
+    transform: none !important;
+  }
+
+  .hero__content {
+    position: absolute !important;
+    inset: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: max(env(safe-area-inset-top, 20px), 25px) 20px max(env(safe-area-inset-bottom, 20px), 20px) 20px !important;
+    z-index: 3 !important;
+    pointer-events: none !important;
+  }
+
+  .hero__content > * {
+    pointer-events: auto !important;
+  }
+
+  /* SUBE MÁS EL FRANCO & DAY (en el cielo despejado) */
+  .hero__title {
+    margin-top: 15px !important;
+    margin-bottom: 0 !important;
+    font-size: clamp(2.1rem, 7.5vw, 2.6rem) !important;
+    line-height: 1.05 !important;
+    letter-spacing: 0.08em !important;
+    color: #FAF8F2 !important;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7), 0 1px 4px rgba(0,0,0,0.6) !important;
+  }
+
+  /* BAJA MUCHO EL RESTO DEL TEXTO (en la zona de piedras al fondo) */
+  .hero__tagline {
+    margin-top: auto !important;
+    margin-bottom: 6px !important;
+    font-size: 1.15rem !important;
+    line-height: 1.4 !important;
+    max-width: 320px !important;
+    color: #FAF8F2 !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.8) !important;
+    opacity: 1 !important;
+  }
+
+  .hero__date {
+    margin-bottom: 8px !important;
+    font-size: 1.15rem !important;
+    letter-spacing: 0.28em !important;
+    color: #FAF8F2 !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.8) !important;
+    opacity: 1 !important;
+  }
+
+  .hero__scroll {
+    position: static !important;
+    transform: none !important;
+    margin-top: 0 !important;
+    margin-bottom: 2px !important;
+    opacity: 1 !important;
+  }
+
+  .hero__scroll-text {
+    font-size: 0.78rem !important;
+    letter-spacing: 0.2em !important;
+    color: rgba(253, 251, 247, 0.85) !important;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.9) !important;
+    margin-bottom: 2px !important;
+  }
+
+  .hero__scroll-arrow {
+    color: rgba(253, 251, 247, 0.85) !important;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.9) !important;
+  }
+
+  /* Navigation — Menú superior súper pequeño y discreto en móvil */
+  .floating-nav {
+    top: 8px !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translate(-50%, -150%) !important;
+    padding: 3px 8px !important;
+    gap: 2px !important;
+    max-width: fit-content !important;
+    width: auto !important;
+    border-radius: 999px !important;
+    background: rgba(26, 28, 27, 0.8) !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3) !important;
+  }
+  .floating-nav.visible {
+    transform: translate(-50%, 0) !important;
+  }
   .floating-nav__link {
-    font-size: 0.95rem !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.15em !important;
+    font-size: 0.65rem !important;
+    padding: 2px 6px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.06em !important;
   }
 
   /* Intro Section */
@@ -3752,12 +3828,13 @@ h1, h2, h3, h4 {
     opacity: 1 !important;
   }
   .footer__credit {
-    font-size: 1.25rem !important;
-    font-weight: 600 !important;
-    opacity: 1 !important;
+    font-size: 0.68rem !important;
+    font-weight: 500 !important;
+    color: #726d66 !important;
+    opacity: 0.75 !important;
   }
   .footer__heart-btn {
-    font-size: 1.7rem !important;
-    padding: 6px 12px !important;
+    font-size: 0.82rem !important;
+    padding: 1px 3px !important;
   }
 }
