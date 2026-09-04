@@ -711,7 +711,7 @@ h1, h2, h3, h4 {
 
 .hero__scroll {
   position: absolute;
-  bottom: 12px;
+  bottom: 3px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -722,20 +722,21 @@ h1, h2, h3, h4 {
 
 .hero__scroll-text {
   font-family: var(--font-sans);
-  font-size: 0.58rem;
+  font-size: 0.54rem;
   font-weight: 500;
   opacity: 0.65;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(253, 251, 247, 0.7);
-  margin-bottom: 2px;
+  color: rgba(253, 251, 247, 0.75);
+  margin-bottom: 1px;
   display: block;
 }
 
 .hero__scroll-arrow {
-  font-size: 0.8rem;
-  color: rgba(253, 251, 247, 0.55);
+  font-size: 0.75rem;
+  color: rgba(253, 251, 247, 0.6);
   animation: scrollBounce 2s var(--ease-out) infinite;
+  line-height: 1;
 }
 
 @keyframes heroFadeIn {
@@ -3430,7 +3431,7 @@ h1, h2, h3, h4 {
     flex-direction: column !important;
     justify-content: space-between !important;
     align-items: center !important;
-    padding: max(env(safe-area-inset-top, 20px), 25px) 20px max(env(safe-area-inset-bottom, 20px), 20px) 20px !important;
+    padding: max(env(safe-area-inset-top, 20px), 25px) 20px max(env(safe-area-inset-bottom, 20px), 28px) 20px !important;
     z-index: 3 !important;
     pointer-events: none !important;
   }
@@ -3450,10 +3451,10 @@ h1, h2, h3, h4 {
     text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7), 0 1px 4px rgba(0,0,0,0.6) !important;
   }
 
-  /* BAJA MUCHO EL RESTO DEL TEXTO (en la zona de piedras al fondo) */
+  /* BAJA EL TEXTO DE LA FRASE (al fondo) */
   .hero__tagline {
     margin-top: auto !important;
-    margin-bottom: 6px !important;
+    margin-bottom: 4px !important;
     font-size: 1.15rem !important;
     line-height: 1.4 !important;
     max-width: 320px !important;
@@ -3462,38 +3463,34 @@ h1, h2, h3, h4 {
     opacity: 1 !important;
   }
 
-  .hero__date {
-    margin-bottom: 8px !important;
-    font-size: 1.15rem !important;
-    letter-spacing: 0.28em !important;
-    color: #FAF8F2 !important;
-    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.8) !important;
-    opacity: 1 !important;
-  }
-
+  /* TEXTO DE DESPLAZAMIENTO PEGADO AL BORDE INFERIOR DE LA IMAGEN */
   .hero__scroll {
-    position: static !important;
-    transform: none !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+    position: absolute !important;
+    bottom: 3px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
     opacity: 1 !important;
+    z-index: 5 !important;
+    pointer-events: auto !important;
   }
 
   .hero__scroll-text {
-    font-size: 0.55rem !important;
+    font-size: 0.52rem !important;
     letter-spacing: 0.2em !important;
     color: rgba(253, 251, 247, 0.8) !important;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9) !important;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.95) !important;
     margin-bottom: 1px !important;
     font-weight: 500 !important;
     opacity: 0.7 !important;
   }
 
   .hero__scroll-arrow {
-    font-size: 0.75rem !important;
+    font-size: 0.72rem !important;
     color: rgba(253, 251, 247, 0.75) !important;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9) !important;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.95) !important;
     margin-top: 0 !important;
+    line-height: 1 !important;
   }
 
   /* Navigation — Menú superior súper pequeño y discreto en móvil */
